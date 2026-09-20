@@ -250,6 +250,11 @@
                                 Pengumpulan bukti akses Monthly Task wajib diserahkan kepada Kepala Toko (Store Head) atau Store Trainer masing-masing selambat-lambatnya sebelum tanggal 5 setiap bulannya.
                             </p>
                         </div>
+
+                        <a href="https://forms.gle/YOUR_FORM_LINK_HERE" target="_blank" class="w-full py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_submit_coach">Submit Sales Coach Task</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -295,21 +300,24 @@
 
     <!-- DOCK IPHONE UTAMA KHUSUS TAMPILAN MOBILE (Floating iOS Dock di bagian bawah layar fisik HP pengguna) -->
     <div class="md:hidden fixed bottom-3 left-0 right-0 z-50 flex justify-center px-4">
-        <div class="w-full max-w-xs bg-white/75 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[32px] px-4 py-2.5 shadow-2xl border border-white/40 dark:border-slate-700/60 flex justify-around items-center">
-            <button onclick="switchTab('landing')" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-400 to-brand-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Landing">
-                <i class="fa-solid fa-house text-sm"></i>
+        <div class="w-full max-w-sm bg-white/75 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[32px] px-3 py-2.5 shadow-2xl border border-white/40 dark:border-slate-700/60 flex justify-around items-center">
+            <button onclick="switchTab('landing')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-brand-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Landing">
+                <i class="fa-solid fa-house text-xs"></i>
             </button>
-            <button onclick="switchTab('open-studio')" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Open Studio">
-                <i class="fa-solid fa-chalkboard-user text-sm"></i>
+            <button onclick="switchTab('open-studio')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Open Studio">
+                <i class="fa-solid fa-chalkboard-user text-xs"></i>
             </button>
-            <button onclick="switchTab('ems')" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="EMS">
-                <i class="fa-solid fa-bolt text-sm"></i>
+            <button onclick="switchTab('ems')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="EMS">
+                <i class="fa-solid fa-bolt text-xs"></i>
             </button>
-            <button onclick="switchTab('lob')" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="LOB">
-                <i class="fa-solid fa-trophy text-sm"></i>
+            <button onclick="switchTab('lob')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="LOB">
+                <i class="fa-solid fa-trophy text-xs"></i>
             </button>
-            <button onclick="switchTab('data')" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Data">
-                <i class="fa-solid fa-database text-sm"></i>
+            <button onclick="switchTab('coach')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Sales Coach">
+                <i class="fa-solid fa-file-shield text-xs"></i>
+            </button>
+            <button onclick="switchTab('data')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Data">
+                <i class="fa-solid fa-database text-xs"></i>
             </button>
         </div>
     </div>
@@ -375,10 +383,11 @@
                 lob_desc: "LOB Champion wajib melakukan submit setiap selesai shift untuk penjualan unit LOB Champion masing-masing selama shift berlangsung hingga jam kepulangan shift berakhir. Submit wajib dilakukan pada hari yang sama sesuai tanggal transaksi.",
                 btn_submit_lob: "Submit LOB Champion",
 
-                // Sales Coach
+                // Sales Coach Task
                 card_coach_title: "Sales Coach Monthly Task",
                 card_coach_sub: "Deadline: Tanggal 5 Setiap Bulan",
                 coach_desc: "Pengumpulan bukti akses Monthly Task wajib diserahkan kepada Kepala Toko (Store Head) atau Store Trainer masing-masing selambat-lambatnya sebelum tanggal 5 setiap bulannya.",
+                btn_submit_coach: "Submit Sales Coach Task",
 
                 // Pemadanan Data
                 card_data_title: "Informasi Pemadanan Data",
@@ -428,10 +437,11 @@
                 lob_desc: "LOB Champion must submit at the end of each shift for their own LOB Champion unit sales during their shift until clocking out. Submissions must be done on the same day as the transaction date.",
                 btn_submit_lob: "Submit LOB Champion",
 
-                // Sales Coach
+                // Sales Coach Task
                 card_coach_title: "Sales Coach Monthly Task",
                 card_coach_sub: "Deadline: 5th of Each Month",
                 coach_desc: "Submit monthly task access proofs to your respective Store Head or Store Trainer before the 5th of every month.",
+                btn_submit_coach: "Submit Sales Coach Task",
 
                 // Pemadanan Data
                 card_data_title: "Data Matching Information",
