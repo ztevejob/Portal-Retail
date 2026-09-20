@@ -143,19 +143,29 @@
 
                 <!-- TAB 2: OPEN STUDIO REPORT -->
                 <div id="tab-open-studio" class="tab-content space-y-6 hidden">
-                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-4">
-                                <div class="p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl">
-                                    <i class="fa-solid fa-chalkboard-user text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-base" data-i18n="card_os_title">Open Studio Report</h3>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_os_sub">Presenter & Participant Schedule</p>
-                                </div>
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl">
+                                <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_os_title">Open Studio Report</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_os_sub">Presenter & Participant Daily Submission Schedule</p>
                             </div>
                         </div>
-                        <a href="https://forms.gle/cjE3NPNqQhPwHyQZ9" target="_blank" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm mt-4">
+
+                        <div class="text-xs space-y-3 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p data-i18n="os_desc_intro">Mohon submit data presenter dan partisipan sesuai jadwal ketentuan berikut:</p>
+                            <div class="space-y-1">
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">• <span data-i18n="os_weekday">Hari Kerja (Senin – Jumat):</span> 13:00, 15:00, 18:00</p>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">• <span data-i18n="os_weekend">Akhir Pekan (Sabtu – Minggu):</span> 13:00, 18:00</p>
+                            </div>
+                            <div class="pt-2 border-t border-slate-200 dark:border-slate-700/50 text-[11px] text-amber-600 dark:text-amber-400 font-medium">
+                                <i class="fa-solid fa-triangle-exclamation mr-1"></i> <span data-i18n="os_note">Catatan: Seluruh dokumentasi foto & video wajib disimpan rapi di dalam folder Google Drive masing-masing store.</span>
+                            </div>
+                        </div>
+
+                        <a href="https://forms.gle/cjE3NPNqQhPwHyQZ9" target="_blank" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
                             <span data-i18n="btn_submit_os">Submit Open Studio</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
@@ -164,21 +174,31 @@
 
                 <!-- TAB 3: ECOSYSTEM MASTERY (EMS) -->
                 <div id="tab-ems" class="tab-content space-y-6 hidden">
-                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-4">
-                                <div class="p-3 bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 rounded-xl">
-                                    <i class="fa-solid fa-bolt text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-base" data-i18n="card_ems_title">Ecosystem Mastery (EMS)</h3>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_ems_sub">Daily 5-Minute Training Program</p>
-                                </div>
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 rounded-xl">
+                                <i class="fa-solid fa-bolt text-xl"></i>
                             </div>
-                            <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mb-6" data-i18n="card_ems_desc">
-                                Dilaksanakan setiap hari setelah briefing pagi & siang untuk mengasah product demo & probing skills.
-                            </p>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_ems_title">Ecosystem Mastery (EMS)</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_ems_sub">Daily 5-Minute Training Program</p>
+                            </div>
                         </div>
+
+                        <div class="text-xs space-y-3 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p data-i18n="ems_desc">
+                                Ecosystem Mastery Session (EMS) adalah program pelatihan singkat 5 menit harian yang dilaksanakan setiap hari tepat setelah briefing pagi dan siang. Program ini bertujuan meningkatkan kepercayaan diri saat demo produk dan mengasah kemampuan probing (analisis kebutuhan pelanggan).
+                            </p>
+                            <div>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200 mb-1" data-i18n="ems_focus_title">Fokus 2 Materi Utama (Pilih salah satu):</p>
+                                <ul class="list-disc pl-4 space-y-1 text-slate-500 dark:text-slate-400">
+                                    <li><strong class="text-slate-700 dark:text-slate-200" data-i18n="ems_mat_1">Product Demo:</strong> Mempraktikkan fitur unggulan Mac & Apple Watch.</li>
+                                    <li><strong class="text-slate-700 dark:text-slate-200" data-i18n="ems_mat_2">Accessories Tips:</strong> Menggali & menjelaskan manfaat seluruh aksesori yang tersedia di toko.</li>
+                                    <li><strong class="text-slate-700 dark:text-slate-200" data-i18n="ems_mat_3">Questions Exercise:</strong> Melatih staf membuat minimal 3 pertanyaan probing yang efektif.</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <a href="https://forms.gle/c3ye8Xt41YVQ32cTA" target="_blank" class="w-full py-3 px-4 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
                             <span data-i18n="btn_submit_ems">Link Report National EMS</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
@@ -188,19 +208,24 @@
 
                 <!-- TAB 4: LOB CHAMPION -->
                 <div id="tab-lob" class="tab-content space-y-6 hidden">
-                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-4">
-                                <div class="p-3 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl">
-                                    <i class="fa-solid fa-trophy text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-base" data-i18n="card_lob_title">LOB Champion Submission</h3>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_lob_sub">Shift Sales Reporting</p>
-                                </div>
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl">
+                                <i class="fa-solid fa-trophy text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_lob_title">LOB Champion Submission</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_lob_sub">Shift Sales Reporting</p>
                             </div>
                         </div>
-                        <a href="https://forms.gle/wBqvUTnbsCaTWFgM9" target="_blank" class="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm mt-4">
+
+                        <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p data-i18n="lob_desc">
+                                LOB Champion wajib melakukan submit setiap selesai shift untuk penjualan unit LOB Champion masing-masing selama shift berlangsung hingga jam kepulangan shift berakhir. Submit wajib dilakukan pada hari yang sama sesuai tanggal transaksi.
+                            </p>
+                        </div>
+
+                        <a href="https://forms.gle/wBqvUTnbsCaTWFgM9" target="_blank" class="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
                             <span data-i18n="btn_submit_lob">Submit LOB Champion</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
@@ -209,39 +234,48 @@
 
                 <!-- TAB 5: SALES COACH TASK -->
                 <div id="tab-coach" class="tab-content space-y-6 hidden">
-                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-4">
-                                <div class="p-3 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl">
-                                    <i class="fa-solid fa-file-shield text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-base" data-i18n="card_coach_title">Sales Coach Monthly Task</h3>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_coach_sub">Deadline: Tanggal 5 Setiap Bulan</p>
-                                </div>
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl">
+                                <i class="fa-solid fa-file-shield text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_coach_title">Sales Coach Monthly Task</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_coach_sub">Deadline: Tanggal 5 Setiap Bulan</p>
                             </div>
                         </div>
-                        <div class="p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl text-center text-xs text-slate-400 font-medium border border-slate-100 dark:border-slate-700/50 mt-4">
-                            Pengumpulan langsung ke Store Head / Store Trainer
+
+                        <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p data-i18n="coach_desc">
+                                Pengumpulan bukti akses Monthly Task wajib diserahkan kepada Kepala Toko (Store Head) atau Store Trainer masing-masing selambat-lambatnya sebelum tanggal 5 setiap bulannya.
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- TAB 6: PEMADANAN DATA -->
                 <div id="tab-data" class="tab-content space-y-6 hidden">
-                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center space-x-3 mb-4">
-                                <div class="p-3 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl">
-                                    <i class="fa-solid fa-database text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-base" data-i18n="card_data_title">Informasi Pemadanan Data</h3>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_data_sub">Pengecekan & Sinkronisasi Data Mandiri</p>
-                                </div>
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl">
+                                <i class="fa-solid fa-database text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_data_title">Informasi Pemadanan Data</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_data_sub">Pengecekan & Sinkronisasi Data Mandiri</p>
                             </div>
                         </div>
-                        <a href="https://script.google.com/macros/s/AKfycbxUeD2UfLCrcjk5fWcaXeyNqUIYRNEdj1Izn7ZbWvN2Es0tt52RH4tBDITXYE42iwKYBQ/exec" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm mt-4">
+
+                        <div class="text-xs space-y-3 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p data-i18n="data_desc_1">
+                                Akses menggunakan NIK Anda untuk memeriksa data pribadi Anda. Jika ditemukan kesalahan, segera laporkan kepada Supervisor (SPV) atau Store Trainer (ST) dengan menyertakan bukti PDF untuk segera diperbaiki.
+                            </p>
+                            <p data-i18n="data_desc_2" class="font-medium text-slate-700 dark:text-slate-200">
+                                Setelah proses perbaikan selesai oleh SPV/ST, mohon hubungi Trainer HO agar dapat dilakukan proses sinkronisasi ulang (*resync*).
+                            </p>
+                        </div>
+
+                        <a href="https://script.google.com/macros/s/AKfycbxUeD2UfLCrcjk5fWcaXeyNqUIYRNEdj1Izn7ZbWvN2Es0tt52RH4tBDITXYE42iwKYBQ/exec" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
                             <span data-i18n="btn_data_access">Akses Portal Pemadanan Data</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
@@ -315,19 +349,42 @@
                 motiv_footer: "Selalu Berikan yang Terbaik!",
                 welcome_heading: "Dashboard Operasional & Pelaporan",
                 welcome_desc: "Gunakan sidebar di kiri atau Dock aplikasi ala iPhone di bawah untuk mengakses formulir laporan dengan cepat.",
+                
+                // Open Studio
                 card_os_title: "Open Studio Report",
-                card_os_sub: "Presenter & Participant Schedule",
+                card_os_sub: "Presenter & Participant Daily Submission Schedule",
+                os_desc_intro: "Mohon submit data presenter dan partisipan sesuai jadwal ketentuan berikut:",
+                os_weekday: "Hari Kerja (Senin – Jumat):",
+                os_weekend: "Akhir Pekan (Sabtu – Minggu):",
+                os_note: "Catatan: Seluruh dokumentasi foto & video wajib disimpan rapi di dalam folder Google Drive masing-masing store.",
                 btn_submit_os: "Submit Open Studio",
+
+                // EMS
                 card_ems_title: "Ecosystem Mastery (EMS)",
                 card_ems_sub: "Daily 5-Minute Training Program",
-                card_ems_desc: "Dilaksanakan setiap hari setelah briefing pagi & siang untuk mengasah product demo & probing skills.",
+                ems_desc: "Ecosystem Mastery Session (EMS) adalah program pelatihan singkat 5 menit harian yang dilaksanakan setiap hari tepat setelah briefing pagi dan siang. Program ini bertujuan meningkatkan kepercayaan diri saat demo produk dan mengasah kemampuan probing (analisis kebutuhan pelanggan).",
+                ems_focus_title: "Fokus 2 Materi Utama (Pilih salah satu):",
+                ems_mat_1: "Product Demo:",
+                ems_mat_2: "Accessories Tips:",
+                ems_mat_3: "Questions Exercise:",
                 btn_submit_ems: "Link Report National EMS",
+
+                // LOB
                 card_lob_title: "LOB Champion Submission",
                 card_lob_sub: "Shift Sales Reporting",
+                lob_desc: "LOB Champion wajib melakukan submit setiap selesai shift untuk penjualan unit LOB Champion masing-masing selama shift berlangsung hingga jam kepulangan shift berakhir. Submit wajib dilakukan pada hari yang sama sesuai tanggal transaksi.",
+                btn_submit_lob: "Submit LOB Champion",
+
+                // Sales Coach
                 card_coach_title: "Sales Coach Monthly Task",
                 card_coach_sub: "Deadline: Tanggal 5 Setiap Bulan",
+                coach_desc: "Pengumpulan bukti akses Monthly Task wajib diserahkan kepada Kepala Toko (Store Head) atau Store Trainer masing-masing selambat-lambatnya sebelum tanggal 5 setiap bulannya.",
+
+                // Pemadanan Data
                 card_data_title: "Informasi Pemadanan Data",
                 card_data_sub: "Pengecekan & Sinkronisasi Data Mandiri",
+                data_desc_1: "Akses menggunakan NIK Anda untuk memeriksa data pribadi Anda. Jika ditemukan kesalahan, segera laporkan kepada Supervisor (SPV) atau Store Trainer (ST) dengan menyertakan bukti PDF untuk segera diperbaiki.",
+                data_desc_2: "Setelah proses perbaikan selesai oleh SPV/ST, mohon hubungi Trainer HO agar dapat dilakukan proses sinkronisasi ulang (resync).",
                 btn_data_access: "Akses Portal Pemadanan Data"
             },
             en: {
@@ -345,19 +402,42 @@
                 motiv_footer: "Always Give Your Best!",
                 welcome_heading: "Operations & Reporting Dashboard",
                 welcome_desc: "Use the left sidebar or the iPhone-style dock below to quickly access reporting forms.",
+                
+                // Open Studio
                 card_os_title: "Open Studio Report",
-                card_os_sub: "Presenter & Participant Schedule",
+                card_os_sub: "Presenter & Participant Daily Submission Schedule",
+                os_desc_intro: "Please submit the presenter and participant records according to the following schedule:",
+                os_weekday: "Weekdays (Mon – Fri):",
+                os_weekend: "Weekends (Sat – Sun):",
+                os_note: "Note: All documentation photos and videos must be saved in your respective Google Drive folders.",
                 btn_submit_os: "Submit Open Studio",
+
+                // EMS
                 card_ems_title: "Ecosystem Mastery (EMS)",
                 card_ems_sub: "Daily 5-Minute Training Program",
-                card_ems_desc: "Conducted daily right after morning and afternoon briefings to sharpen product demos & probing skills.",
+                ems_desc: "Ecosystem Mastery Session (EMS) is a short, 5-minute daily training program conducted every day right after the morning and afternoon briefings. This program aims to boost confidence during product demos and sharpen probing skills (customer needs analysis).",
+                ems_focus_title: "Focuses on 2 main materials (choose one):",
+                ems_mat_1: "Product Demo:",
+                ems_mat_2: "Accessories Tips:",
+                ems_mat_3: "Questions Exercise:",
                 btn_submit_ems: "Link Report National EMS",
+
+                // LOB
                 card_lob_title: "LOB Champion Submission",
                 card_lob_sub: "Shift Sales Reporting",
+                lob_desc: "LOB Champion must submit at the end of each shift for their own LOB Champion unit sales during their shift until clocking out. Submissions must be done on the same day as the transaction date.",
+                btn_submit_lob: "Submit LOB Champion",
+
+                // Sales Coach
                 card_coach_title: "Sales Coach Monthly Task",
                 card_coach_sub: "Deadline: 5th of Each Month",
+                coach_desc: "Submit monthly task access proofs to your respective Store Head or Store Trainer before the 5th of every month.",
+
+                // Pemadanan Data
                 card_data_title: "Data Matching Information",
                 card_data_sub: "Self-Check & Data Synchronization",
+                data_desc_1: "Access with your NIK to view your data. If there are any errors, immediately report to SPV or ST by providing PDF proof for prompt correction.",
+                data_desc_2: "Afterwards, kindly request HO Trainer to re-sync your data.",
                 btn_data_access: "Access Data Matching Portal"
             }
         };
