@@ -27,29 +27,16 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col md:flex-row">
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col items-center justify-center p-2 md:p-6">
 
-    <!-- Mobile Header Bar -->
-    <div class="md:hidden flex items-center justify-between bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3 sticky top-0 z-50">
-        <div class="flex items-center space-x-3">
-            <button id="sidebar-toggle" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <span class="font-bold text-sm" data-i18n="portal_title">Portal Retail</span>
-        </div>
-        <div class="flex items-center space-x-2">
-            <button onclick="toggleTheme()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                <i id="mobile-theme-icon" class="fa-solid fa-moon"></i>
-            </button>
-        </div>
-    </div>
+    <!-- Container Utama: Mode Desktop & Simulasi HP -->
+    <div class="w-full max-w-6xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col md:flex-row min-h-[85vh]">
 
-    <!-- Sidebar Navigation -->
-    <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col justify-between transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out shadow-lg md:shadow-none">
-        <div>
-            <!-- Sidebar Header -->
-            <div class="p-6 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
-                <div class="flex items-center space-x-3">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside id="sidebar" class="hidden md:flex w-64 bg-slate-50 dark:bg-slate-800/60 border-r border-slate-200 dark:border-slate-800 flex-col justify-between">
+            <div>
+                <!-- Sidebar Header -->
+                <div class="p-6 border-b border-slate-200 dark:border-slate-700/60 flex items-center space-x-3">
                     <div class="bg-brand-500 text-white p-2.5 rounded-xl shadow-md">
                         <i class="fa-solid fa-store text-lg"></i>
                     </div>
@@ -58,337 +45,309 @@
                         <p class="text-[10px] text-slate-500 dark:text-slate-400">Training Department</p>
                     </div>
                 </div>
-                <button id="sidebar-close" class="md:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
+
+                <!-- Navigation Links -->
+                <nav class="p-4 space-y-1.5 text-sm">
+                    <button onclick="switchTab('landing')" id="nav-btn-landing" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 font-medium transition text-left">
+                        <i class="fa-solid fa-house w-5"></i>
+                        <span data-i18n="nav_landing">Landing & Motivasi</span>
+                    </button>
+                    <button onclick="switchTab('open-studio')" id="nav-btn-open-studio" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-chalkboard-user w-5"></i>
+                        <span data-i18n="nav_open_studio">Open Studio</span>
+                    </button>
+                    <button onclick="switchTab('ems')" id="nav-btn-ems" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-bolt w-5"></i>
+                        <span data-i18n="nav_ems">Ecosystem Mastery</span>
+                    </button>
+                    <button onclick="switchTab('lob')" id="nav-btn-lob" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-trophy w-5"></i>
+                        <span data-i18n="nav_lob">LOB Champion</span>
+                    </button>
+                    <button onclick="switchTab('coach')" id="nav-btn-coach" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-file-shield w-5"></i>
+                        <span data-i18n="nav_coach">Sales Coach Task</span>
+                    </button>
+                    <button onclick="switchTab('data')" id="nav-btn-data" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-database w-5"></i>
+                        <span data-i18n="nav_data">Pemadanan Data</span>
+                    </button>
+                </nav>
             </div>
 
-            <!-- Navigation Links -->
-            <nav class="p-4 space-y-1.5 text-sm">
-                <button onclick="switchTab('landing')" id="nav-btn-landing" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 font-medium transition text-left">
-                    <i class="fa-solid fa-house w-5"></i>
-                    <span data-i18n="nav_landing">Landing & Motivasi</span>
+            <!-- Sidebar Footer / Settings -->
+            <div class="p-4 border-t border-slate-200 dark:border-slate-700/60 space-y-3">
+                <div class="flex items-center justify-between bg-white dark:bg-slate-900/50 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <span class="text-xs text-slate-500 dark:text-slate-400 pl-1"><i class="fa-solid fa-globe mr-1.5"></i> <span data-i18n="lang_label">Bahasa</span></span>
+                    <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-transparent text-xs font-semibold text-slate-700 dark:text-slate-200 focus:outline-none cursor-pointer">
+                        <option value="id" class="dark:bg-slate-800">ID</option>
+                        <option value="en" class="dark:bg-slate-800">EN</option>
+                    </select>
+                </div>
+                <button onclick="toggleTheme()" class="w-full flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-white dark:bg-slate-700/50 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium transition border border-slate-200 dark:border-slate-700">
+                    <i id="desktop-theme-icon" class="fa-solid fa-moon"></i>
+                    <span id="theme-text">Mode Gelap</span>
                 </button>
-                <button onclick="switchTab('open-studio')" id="nav-btn-open-studio" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
-                    <i class="fa-solid fa-chalkboard-user w-5"></i>
-                    <span data-i18n="nav_open_studio">Open Studio</span>
-                </button>
-                <button onclick="switchTab('ems')" id="nav-btn-ems" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
-                    <i class="fa-solid fa-bolt w-5"></i>
-                    <span data-i18n="nav_ems">Ecosystem Mastery</span>
-                </button>
-                <button onclick="switchTab('lob')" id="nav-btn-lob" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
-                    <i class="fa-solid fa-trophy w-5"></i>
-                    <span data-i18n="nav_lob">LOB Champion</span>
-                </button>
-                <button onclick="switchTab('coach')" id="nav-btn-coach" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
-                    <i class="fa-solid fa-file-shield w-5"></i>
-                    <span data-i18n="nav_coach">Sales Coach Task</span>
-                </button>
-                <button onclick="switchTab('data')" id="nav-btn-data" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
-                    <i class="fa-solid fa-database w-5"></i>
-                    <span data-i18n="nav_data">Pemadanan Data</span>
-                </button>
-            </nav>
-        </div>
-
-        <!-- Sidebar Footer / Settings -->
-        <div class="p-4 border-t border-slate-200 dark:border-slate-700 space-y-3">
-            <!-- Language Selector -->
-            <div class="flex items-center justify-between bg-slate-100 dark:bg-slate-900/50 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
-                <span class="text-xs text-slate-500 dark:text-slate-400 pl-1"><i class="fa-solid fa-globe mr-1.5"></i> <span data-i18n="lang_label">Bahasa</span></span>
-                <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-transparent text-xs font-semibold text-slate-700 dark:text-slate-200 focus:outline-none cursor-pointer">
-                    <option value="id" class="dark:bg-slate-800">ID</option>
-                    <option value="en" class="dark:bg-slate-800">EN</option>
-                </select>
             </div>
-            <!-- Theme Toggle Desktop -->
-            <button onclick="toggleTheme()" class="w-full flex items-center justify-center space-x-2 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-700/50 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium transition">
-                <i id="desktop-theme-icon" class="fa-solid fa-moon"></i>
-                <span id="theme-text">Mode Gelap</span>
-            </button>
-        </div>
-    </aside>
+        </aside>
 
-    <!-- Overlay for Mobile Sidebar -->
-    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"></div>
+        <!-- Main Content & Phone Mockup Area -->
+        <main class="flex-grow flex flex-col justify-between bg-slate-50/50 dark:bg-slate-900/50 relative">
 
-    <!-- Main Content Area -->
-    <div class="flex-grow flex flex-col min-h-screen md:ml-64">
-
-        <!-- Top Header Bar (Desktop) -->
-        <header class="hidden md:flex items-center justify-between bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 px-8 py-4 sticky top-0 z-30">
-            <div>
-                <h2 class="font-bold text-base" id="header-title" data-i18n="header_welcome">Selamat Datang di Portal Pelatihan</h2>
-                <p class="text-xs text-slate-500 dark:text-slate-400" id="header-subtitle" data-i18n="header_subtitle">Sistem pelaporan operasional & retail harian</p>
-            </div>
-            <!-- Live Clock & Date Widget -->
-            <div class="flex items-center space-x-4">
-                <div class="text-right">
+            <!-- Top Header Bar -->
+            <header class="flex items-center justify-between bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-6 py-4 sticky top-0 z-30">
+                <div class="flex items-center space-x-3">
+                    <div class="md:hidden bg-brand-500 text-white p-2 rounded-xl">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-sm md:text-base" id="header-title" data-i18n="header_welcome">Selamat Datang di Portal Pelatihan</h2>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400" id="header-subtitle" data-i18n="header_subtitle">Sistem pelaporan operasional & retail harian</p>
+                    </div>
+                </div>
+                <!-- Live Clock & Date Widget -->
+                <div class="hidden sm:block text-right">
                     <div id="live-date" class="text-xs font-semibold text-slate-700 dark:text-slate-200">--</div>
                     <div id="live-time" class="text-[11px] text-brand-600 dark:text-brand-400 font-mono font-bold">--:--:--</div>
                 </div>
-            </div>
-        </header>
+            </header>
 
-        <!-- Main Dynamic Content Container -->
-        <main class="p-6 md:p-8 space-y-6 flex-grow">
+            <!-- Dynamic Body Container -->
+            <div class="p-4 md:p-8 space-y-6 flex-grow overflow-y-auto">
 
-            <!-- Mobile Date & Weather banner -->
-            <div class="md:hidden bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 flex justify-between items-center text-xs">
-                <div>
-                    <div id="mobile-live-date" class="font-semibold">--</div>
-                    <div id="mobile-live-time" class="text-brand-600 dark:text-brand-400 font-mono font-bold">--:--:--</div>
-                </div>
-                <div class="flex items-center space-x-2 text-right">
-                    <i class="fa-solid fa-cloud-sun text-amber-500 text-lg"></i>
-                    <div>
-                        <div class="font-bold">28°C</div>
-                        <div class="text-[10px] text-slate-400">Surabaya</div>
+                <!-- SIMULASI LAYAR HANDPHONE DENGAN DOCK APLIKASI -->
+                <div class="flex justify-center my-2">
+                    <div class="w-full max-w-sm bg-slate-900 dark:bg-slate-950 rounded-[40px] p-3 shadow-2xl border-4 border-slate-700 dark:border-slate-800 relative">
+                        <!-- Speaker / Dynamic Island HP -->
+                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-28 h-4 bg-black rounded-full z-20 flex items-center justify-center">
+                            <div class="w-3 h-3 bg-slate-900 rounded-full mr-3"></div>
+                            <div class="w-10 h-1 bg-slate-800 rounded-full"></div>
+                        </div>
+
+                        <!-- Layar HP Dalam Frame -->
+                        <div class="bg-slate-100 dark:bg-slate-900 rounded-[32px] pt-10 pb-4 px-4 flex flex-col justify-between min-h-[460px] text-slate-800 dark:text-slate-100 relative overflow-hidden border border-slate-800">
+                            
+                            <!-- Konten Dalam Layar HP (Bisa Digulir) -->
+                            <div class="space-y-4 overflow-y-auto max-h-[360px] pr-1">
+                                <div class="text-center pb-2 border-b border-slate-200 dark:border-slate-800">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">📱 Phone Simulator Screen</span>
+                                    <h3 class="text-xs font-semibold text-slate-600 dark:text-slate-300">Quick Access & Status</h3>
+                                </div>
+
+                                <!-- Kutipan Motivasi di HP -->
+                                <div class="bg-gradient-to-br from-brand-600 to-emerald-700 rounded-2xl p-4 text-white shadow-md text-xs">
+                                    <div class="flex items-center space-x-1.5 mb-1.5 opacity-90">
+                                        <i class="fa-solid fa-quote-left"></i>
+                                        <span class="font-bold uppercase tracking-wide text-[10px]" data-i18n="motiv_badge">💡 Motivasi Harian</span>
+                                    </div>
+                                    <p id="phone-motivation-quote" class="font-medium italic leading-relaxed">
+                                        "Pelayanan prima bukan sekadar menjual produk, tetapi menciptakan pengalaman berharga..."
+                                    </p>
+                                </div>
+
+                                <!-- Mini Widget Cuaca di HP -->
+                                <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-cloud-sun text-amber-500 text-lg"></i>
+                                        <div>
+                                            <div class="font-bold">Surabaya 28°C</div>
+                                            <div class="text-[10px] text-slate-400">Cerah Berawan</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-[10px] bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 px-2 py-0.5 rounded-full font-semibold">Live</span>
+                                </div>
+                            </div>
+
+                            <!-- DOCK APLIKASI DI BAWAH LAYAR HP -->
+                            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800">
+                                <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-2 shadow-inner border border-slate-200/50 dark:border-slate-700/50 flex justify-around items-center">
+                                    <button onclick="switchTab('landing')" class="p-2 rounded-xl bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 hover:scale-110 transition shadow-sm" title="Landing">
+                                        <i class="fa-solid fa-house text-sm"></i>
+                                    </button>
+                                    <button onclick="switchTab('open-studio')" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:scale-110 transition" title="Open Studio">
+                                        <i class="fa-solid fa-chalkboard-user text-sm"></i>
+                                    </button>
+                                    <button onclick="switchTab('ems')" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:scale-110 transition" title="EMS">
+                                        <i class="fa-solid fa-bolt text-sm"></i>
+                                    </button>
+                                    <button onclick="switchTab('lob')" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:scale-110 transition" title="LOB Champion">
+                                        <i class="fa-solid fa-trophy text-sm"></i>
+                                    </button>
+                                    <button onclick="switchTab('data')" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:scale-110 transition" title="Data">
+                                        <i class="fa-solid fa-database text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- TAB 1: LANDING & MOTIVASI (Default) -->
-            <div id="tab-landing" class="tab-content space-y-6">
-                <!-- Daily Motivation Banner -->
-                <div class="bg-gradient-to-r from-brand-600 to-emerald-700 rounded-3xl p-8 text-white shadow-lg relative overflow-hidden flex flex-col justify-between">
-                    <div class="absolute right-0 bottom-0 opacity-10 translate-x-4 translate-y-4">
-                        <i class="fa-solid fa-quote-right text-9xl"></i>
+                <!-- TAB 1: LANDING & MOTIVASI (Default Content) -->
+                <div id="tab-landing" class="tab-content space-y-6">
+                    <div class="bg-gradient-to-r from-brand-600 to-emerald-700 rounded-3xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute right-0 bottom-0 opacity-10 translate-x-4 translate-y-4">
+                            <i class="fa-solid fa-quote-right text-9xl"></i>
+                        </div>
+                        <div class="relative z-10 mb-6">
+                            <span class="bg-white/20 text-xs px-3 py-1 rounded-full font-medium tracking-wide uppercase" data-i18n="motiv_badge">💡 Motivasi Karyawan Harian</span>
+                            <blockquote id="daily-motivation-quote" class="text-base md:text-xl font-semibold mt-4 leading-relaxed">
+                                "Pelayanan prima bukan sekadar menjual produk, tetapi menciptakan pengalaman berharga yang membuat pelanggan kembali dengan senyuman."
+                            </blockquote>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-between text-xs pt-4 border-t border-white/20">
+                            <span id="daily-motivation-author" class="font-medium opacity-90">— Semangat Tim Retail Hari Ini</span>
+                            <span class="bg-black/20 px-3 py-1 rounded-lg" data-i18n="motiv_footer">Selalu Berikan yang Terbaik!</span>
+                        </div>
                     </div>
-                    <div class="relative z-10 mb-6">
-                        <span class="bg-white/20 text-xs px-3 py-1 rounded-full font-medium tracking-wide uppercase" data-i18n="motiv_badge">💡 Motivasi Karyawan Harian</span>
-                        <blockquote id="daily-motivation-quote" class="text-lg md:text-xl font-semibold mt-4 leading-relaxed">
-                            "Pelayanan prima bukan sekadar menjual produk, tetapi menciptakan pengalaman berharga yang membuat pelanggan kembali dengan senyuman."
-                        </blockquote>
-                    </div>
-                    <div class="relative z-10 flex items-center justify-between text-xs pt-4 border-t border-white/20">
-                        <span id="daily-motivation-author" class="font-medium opacity-90">— Semangat Tim Retail Hari Ini</span>
-                        <span class="bg-black/20 px-3 py-1 rounded-lg" data-i18n="motiv_footer">Selalu Berikan yang Terbaik!</span>
-                    </div>
-                </div>
 
-                <!-- Quick Overview & Weather Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="md:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-center">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
                         <h3 class="font-bold text-base mb-2" data-i18n="welcome_heading">Dashboard Operasional & Pelaporan</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="welcome_desc">
-                            Gunakan menu navigasi di sebelah kiri (atau tombol menu di atas pada perangkat seluler) untuk mengakses formulir laporan Open Studio, Ecosystem Mastery (EMS), LOB Champion, Monthly Task Sales Coach, hingga portal pemadanan data mandiri.
+                            Gunakan sidebar di kiri atau Dock Aplikasi pada simulasi ponsel di atas untuk mengakses formulir laporan Open Studio, Ecosystem Mastery (EMS), LOB Champion, Monthly Task Sales Coach, hingga portal pemadanan data mandiri.
                         </p>
                     </div>
-                    <!-- Weather Widget -->
-                    <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 text-white shadow-md relative overflow-hidden flex flex-col justify-between">
+                </div>
+
+                <!-- TAB 2: OPEN STUDIO REPORT -->
+                <div id="tab-open-studio" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full font-medium" data-i18n="weather_badge">Live Weather</span>
-                                <i class="fa-solid fa-sun text-2xl text-amber-300"></i>
-                            </div>
-                            <h4 class="font-bold text-sm">Surabaya, Jawa Timur</h4>
-                        </div>
-                        <div class="flex items-baseline space-x-2 my-2">
-                            <span class="text-3xl font-extrabold">28°C</span>
-                            <span class="text-xs text-blue-100" data-i18n="weather_desc">Cerah / Clear</span>
-                        </div>
-                        <div class="text-[11px] text-blue-100 pt-2 border-t border-white/20">
-                            <span>Kelembapan: 74% | Angin: 14 mph</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 2: OPEN STUDIO REPORT -->
-            <div id="tab-open-studio" class="tab-content space-y-6 hidden">
-                <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl">
-                                <i class="fa-solid fa-chalkboard-user text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-base" data-i18n="card_os_title">Open Studio Report</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_os_sub">Presenter & Participant Schedule</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-3 mb-6 text-sm">
-                            <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-xl border border-slate-100 dark:border-slate-700/50">
-                                <span class="font-semibold text-xs uppercase tracking-wider text-slate-400 block mb-1" data-i18n="schedule_weekday">Weekdays (Mon – Fri)</span>
-                                <div class="flex gap-2">
-                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-medium rounded">13:00</span>
-                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-medium rounded">15:00</span>
-                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-medium rounded">18:00</span>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl">
+                                    <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-base" data-i18n="card_os_title">Open Studio Report</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_os_sub">Presenter & Participant Schedule</p>
                                 </div>
                             </div>
-                            <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-xl border border-slate-100 dark:border-slate-700/50">
-                                <span class="font-semibold text-xs uppercase tracking-wider text-slate-400 block mb-1" data-i18n="schedule_weekend">Weekends (Sat – Sun)</span>
-                                <div class="flex gap-2">
-                                    <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-medium rounded">13:00</span>
-                                    <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-medium rounded">18:00</span>
+                            <div class="space-y-3 mb-6 text-sm">
+                                <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                                    <span class="font-semibold text-xs uppercase tracking-wider text-slate-400 block mb-1" data-i18n="schedule_weekday">Weekdays (Mon – Fri)</span>
+                                    <div class="flex gap-2">
+                                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-medium rounded">13:00</span>
+                                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-medium rounded">15:00</span>
+                                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-medium rounded">18:00</span>
+                                    </div>
                                 </div>
                             </div>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 italic">
-                                <i class="fa-solid fa-triangle-exclamation mr-1 text-amber-500"></i> <span data-i18n="card_os_note">Simpan foto & video dokumentasi di folder Google Drive masing-masing.</span>
-                            </p>
                         </div>
+                        <a href="https://forms.gle/cjE3NPNqQhPwHyQZ9" target="_blank" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_submit_os">Submit Open Studio</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
                     </div>
-
-                    <a href="https://forms.gle/cjE3NPNqQhPwHyQZ9" target="_blank" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
-                        <span data-i18n="btn_submit_os">Submit Open Studio</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- TAB 3: ECOSYSTEM MASTERY (EMS) -->
-            <div id="tab-ems" class="tab-content space-y-6 hidden">
-                <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="p-3 bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 rounded-xl">
-                                <i class="fa-solid fa-bolt text-xl"></i>
+                <!-- TAB 3: ECOSYSTEM MASTERY (EMS) -->
+                <div id="tab-ems" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="p-3 bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 rounded-xl">
+                                    <i class="fa-solid fa-bolt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-base" data-i18n="card_ems_title">Ecosystem Mastery (EMS)</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_ems_sub">Daily 5-Minute Training Program</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-base" data-i18n="card_ems_title">Ecosystem Mastery (EMS)</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_ems_sub">Daily 5-Minute Training Program</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-3 mb-6 text-sm text-slate-600 dark:text-slate-300">
-                            <p class="text-xs leading-relaxed" data-i18n="card_ems_desc">
+                            <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mb-6" data-i18n="card_ems_desc">
                                 Dilaksanakan setiap hari setelah briefing pagi & siang untuk mengasah product demo & probing skills.
                             </p>
-                            <div class="space-y-1.5 text-xs bg-slate-50 dark:bg-slate-900/50 p-3 rounded-xl border border-slate-100 dark:border-slate-700/50">
-                                <div class="font-semibold text-slate-700 dark:text-slate-200 mb-1" data-i18n="ems_materials">Pilihan Materi Utama:</div>
-                                <div class="flex items-start space-x-2">
-                                    <i class="fa-solid fa-check text-brand-500 mt-0.5 text-xs"></i>
-                                    <span><strong data-i18n="ems_m1_title">Product Demo:</strong> <span data-i18n="ems_m1_desc">Fitur Mac & Apple Watch</span></span>
-                                </div>
-                                <div class="flex items-start space-x-2">
-                                    <i class="fa-solid fa-check text-brand-500 mt-0.5 text-xs"></i>
-                                    <span><strong data-i18n="ems_m2_title">Accessories Tips:</strong> <span data-i18n="ems_m2_desc">Manfaat aksesoris toko</span></span>
-                                </div>
-                                <div class="flex items-start space-x-2">
-                                    <i class="fa-solid fa-check text-brand-500 mt-0.5 text-xs"></i>
-                                    <span><strong data-i18n="ems_m3_title">Questions Exercise:</strong> <span data-i18n="ems_m3_desc">Min. 3 probing questions</span></span>
-                                </div>
-                            </div>
                         </div>
+                        <a href="https://forms.gle/c3ye8Xt41YVQ32cTA" target="_blank" class="w-full py-3 px-4 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_submit_ems">Link Report National EMS</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
                     </div>
-
-                    <a href="https://forms.gle/c3ye8Xt41YVQ32cTA" target="_blank" class="w-full py-3 px-4 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
-                        <span data-i18n="btn_submit_ems">Link Report National EMS</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- TAB 4: LOB CHAMPION -->
-            <div id="tab-lob" class="tab-content space-y-6 hidden">
-                <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="p-3 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl">
-                                <i class="fa-solid fa-trophy text-xl"></i>
+                <!-- TAB 4: LOB CHAMPION -->
+                <div id="tab-lob" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="p-3 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl">
+                                    <i class="fa-solid fa-trophy text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-base" data-i18n="card_lob_title">LOB Champion Submission</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_lob_sub">Shift Sales Reporting</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-base" data-i18n="card_lob_title">LOB Champion Submission</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_lob_sub">Shift Sales Reporting</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-3 mb-6 text-sm text-slate-600 dark:text-slate-300">
-                            <p class="text-xs leading-relaxed" data-i18n="card_lob_desc">
-                                LOB Champion wajib melakukan submit setiap selesai shift khusus untuk <strong>penjualan unit LOB pegangannya sendiri</strong> di shift tersebut.
+                            <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mb-6" data-i18n="card_lob_desc">
+                                LOB Champion wajib melakukan submit setiap selesai shift khusus untuk <strong>penjualan unit LOB pegangannya sendiri</strong>.
                             </p>
-                            <div class="p-3 bg-purple-50/50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-900/30 rounded-xl text-xs text-purple-800 dark:text-purple-300">
-                                <i class="fa-solid fa-clock mr-1"></i> <span data-i18n="card_lob_note">Submit dilakukan di hari yang sama sebelum pulang.</span>
-                            </div>
                         </div>
+                        <a href="https://forms.gle/wBqvUTnbsCaTWFgM9" target="_blank" class="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_submit_lob">Submit LOB Champion</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
                     </div>
-
-                    <a href="https://forms.gle/wBqvUTnbsCaTWFgM9" target="_blank" class="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
-                        <span data-i18n="btn_submit_lob">Submit LOB Champion</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- TAB 5: SALES COACH TASK -->
-            <div id="tab-coach" class="tab-content space-y-6 hidden">
-                <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="p-3 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl">
-                                <i class="fa-solid fa-file-shield text-xl"></i>
+                <!-- TAB 5: SALES COACH TASK -->
+                <div id="tab-coach" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="p-3 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl">
+                                    <i class="fa-solid fa-file-shield text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-base" data-i18n="card_coach_title">Sales Coach Monthly Task</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_coach_sub">Deadline: Tanggal 5 Setiap Bulan</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-base" data-i18n="card_coach_title">Sales Coach Monthly Task</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_coach_sub">Deadline: Tanggal 5 Setiap Bulan</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-3 mb-6 text-sm text-slate-600 dark:text-slate-300">
-                            <p class="text-xs leading-relaxed" data-i18n="card_coach_desc">
+                            <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mb-6" data-i18n="card_coach_desc">
                                 Sales Coach wajib mengumpulkan bukti akses monthly task kepada Kepala Toko (Store Head) atau Store Trainer masing-masing.
                             </p>
-                            <div class="p-3 bg-amber-50/50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/30 rounded-xl text-xs text-amber-800 dark:text-amber-300">
-                                <i class="fa-solid fa-clock mr-1"></i> <span data-i18n="card_coach_note">Batas akhir pengumpulan adalah sebelum tanggal 5 setiap bulannya.</span>
-                            </div>
                         </div>
-                    </div>
-                    <div class="p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl text-center text-xs text-slate-400 font-medium border border-slate-100 dark:border-slate-700/50" data-i18n="card_coach_footer">
-                        Pengumpulan langsung ke Store Head / Store Trainer
+                        <div class="p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl text-center text-xs text-slate-400 font-medium border border-slate-100 dark:border-slate-700/50">
+                            Pengumpulan langsung ke Store Head / Store Trainer
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- TAB 6: PEMADANAN DATA -->
-            <div id="tab-data" class="tab-content space-y-6 hidden">
-                <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="p-3 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl">
-                                <i class="fa-solid fa-database text-xl"></i>
+                <!-- TAB 6: PEMADANAN DATA -->
+                <div id="tab-data" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="p-3 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl">
+                                    <i class="fa-solid fa-database text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-base" data-i18n="card_data_title">Informasi Pemadanan Data</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_data_sub">Pengecekan & Sinkronisasi Data Mandiri</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-base" data-i18n="card_data_title">Informasi Pemadanan Data</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_data_sub">Pengecekan & Sinkronisasi Data Mandiri</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-3 mb-6 text-sm text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
-                            <p>
-                                <span data-i18n="card_data_desc">Akses sistem pemadanan data menggunakan</span> <strong>NIK</strong> <span data-i18n="card_data_desc2">Anda untuk melihat status dan rekap data secara mandiri.</span>
+                            <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mb-6" data-i18n="card_data_desc">
+                                Akses sistem pemadanan data menggunakan NIK Anda untuk melihat status dan rekap data secara mandiri.
                             </p>
-                            <div class="p-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700/50 rounded-xl space-y-1.5">
-                                <span class="font-semibold text-slate-700 dark:text-slate-200 block" data-i18n="data_steps_title">Prosedur Perbaikan Data:</span>
-                                <p data-i18n="data_step1">1. Jika terdapat kesalahan data, segera laporkan ke SPV atau Store Trainer (ST).</p>
-                                <p data-i18n="data_step2">2. Sertakan bukti berupa file PDF untuk mempercepat proses perbaikan.</p>
-                                <p data-i18n="data_step3">3. Setelah diperbaiki, minta Trainer HO untuk melakukan resync ulang.</p>
-                            </div>
                         </div>
+                        <a href="https://script.google.com/macros/s/AKfycbxUeD2UfLCrcjk5fWcaXeyNqUIYRNEdj1Izn7ZbWvN2Es0tt52RH4tBDITXYE42iwKYBQ/exec" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_data_access">Akses Portal Pemadanan Data</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
                     </div>
-
-                    <a href="https://script.google.com/macros/s/AKfycbxUeD2UfLCrcjk5fWcaXeyNqUIYRNEdj1Izn7ZbWvN2Es0tt52RH4tBDITXYE42iwKYBQ/exec" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
-                        <span data-i18n="btn_data_access">Akses Portal Pemadanan Data</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
                 </div>
+
             </div>
+
+            <!-- Footer -->
+            <footer class="w-full border-t border-slate-200 dark:border-slate-800 py-4 text-center text-xs text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-slate-900/50 space-y-1">
+                <p>&copy; 2026 Training Department. All rights reserved.</p>
+                <p class="text-[11px] text-slate-400 dark:text-slate-500 font-medium">Concept and Curation by Novi Riyanto</p>
+            </footer>
 
         </main>
-
-        <!-- Footer -->
-        <footer class="w-full border-t border-slate-200 dark:border-slate-700 py-6 text-center text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-800 space-y-1">
-            <p>&copy; 2026 Training Department. All rights reserved.</p>
-            <p class="text-[11px] text-slate-400 dark:text-slate-500 font-medium">Concept and Curation by Novi Riyanto</p>
-        </footer>
-
     </div>
 
     <!-- Script Logic -->
     <script>
-        // Array Kutipan Motivasi Harian (Berganti otomatis berdasarkan hari dalam setahun)
         const motivations = {
             id: [
                 { quote: "Pelayanan prima bukan sekadar menjual produk, tetapi menciptakan pengalaman berharga yang membuat pelanggan kembali dengan senyuman.", author: "— Semangat Tim Retail Hari Ini" },
@@ -406,7 +365,6 @@
             ]
         };
 
-        // Dictionary Translations
         const translations = {
             id: {
                 portal_title: "Portal Retail",
@@ -422,44 +380,25 @@
                 motiv_badge: "💡 Motivasi Karyawan Harian",
                 motiv_footer: "Selalu Berikan yang Terbaik!",
                 welcome_heading: "Dashboard Operasional & Pelaporan",
-                welcome_desc: "Gunakan menu navigasi di sebelah kiri (atau tombol menu di atas pada perangkat seluler) untuk mengakses formulir laporan Open Studio, Ecosystem Mastery (EMS), LOB Champion, Monthly Task Sales Coach, hingga portal pemadanan data mandiri.",
+                welcome_desc: "Gunakan sidebar di kiri atau Dock Aplikasi pada simulasi ponsel di atas untuk mengakses formulir laporan Open Studio, Ecosystem Mastery (EMS), LOB Champion, Monthly Task Sales Coach, hingga portal pemadanan data mandiri.",
                 card_os_title: "Open Studio Report",
                 card_os_sub: "Presenter & Participant Schedule",
                 schedule_weekday: "Weekdays (Mon – Fri)",
-                schedule_weekend: "Weekends (Sat – Sun)",
-                card_os_note: "Simpan foto & video dokumentasi di folder Google Drive masing-masing.",
                 btn_submit_os: "Submit Open Studio",
                 card_ems_title: "Ecosystem Mastery (EMS)",
                 card_ems_sub: "Daily 5-Minute Training Program",
                 card_ems_desc: "Dilaksanakan setiap hari setelah briefing pagi & siang untuk mengasah product demo & probing skills.",
-                ems_materials: "Pilihan Materi Utama:",
-                ems_m1_title: "Product Demo:",
-                ems_m1_desc: "Fitur Mac & Apple Watch",
-                ems_m2_title: "Accessories Tips:",
-                ems_m2_desc: "Manfaat aksesoris toko",
-                ems_m3_title: "Questions Exercise:",
-                ems_m3_desc: "Min. 3 probing questions",
                 btn_submit_ems: "Link Report National EMS",
                 card_lob_title: "LOB Champion Submission",
                 card_lob_sub: "Shift Sales Reporting",
-                card_lob_desc: "LOB Champion wajib melakukan submit setiap selesai shift khusus untuk",
-                card_lob_note: "Submit dilakukan di hari yang sama sebelum pulang.",
+                card_lob_desc: "LOB Champion wajib melakukan submit setiap selesai shift khusus untuk penjualan unit LOB pegangannya sendiri.",
                 btn_submit_lob: "Submit LOB Champion",
                 card_coach_title: "Sales Coach Monthly Task",
                 card_coach_sub: "Deadline: Tanggal 5 Setiap Bulan",
                 card_coach_desc: "Sales Coach wajib mengumpulkan bukti akses monthly task kepada Kepala Toko (Store Head) atau Store Trainer masing-masing.",
-                card_coach_note: "Batas akhir pengumpulan adalah sebelum tanggal 5 setiap bulannya.",
-                card_coach_footer: "Pengumpulan langsung ke Store Head / Store Trainer",
-                weather_badge: "Cuaca Langsung",
-                weather_desc: "Cerah / Clear",
                 card_data_title: "Informasi Pemadanan Data",
                 card_data_sub: "Pengecekan & Sinkronisasi Data Mandiri",
-                card_data_desc: "Akses sistem pemadanan data menggunakan",
-                card_data_desc2: "Anda untuk melihat status dan rekap data secara mandiri.",
-                data_steps_title: "Prosedur Perbaikan Data:",
-                data_step1: "1. Jika terdapat kesalahan data, segera laporkan ke SPV atau Store Trainer (ST).",
-                data_step2: "2. Sertakan bukti berupa file PDF untuk mempercepat proses perbaikan.",
-                data_step3: "3. Setelah diperbaiki, minta Trainer HO untuk melakukan resync ulang.",
+                card_data_desc: "Akses sistem pemadanan data menggunakan NIK Anda untuk melihat status dan rekap data secara mandiri.",
                 btn_data_access: "Akses Portal Pemadanan Data"
             },
             en: {
@@ -476,44 +415,25 @@
                 motiv_badge: "💡 Daily Employee Motivation",
                 motiv_footer: "Always Give Your Best!",
                 welcome_heading: "Operations & Reporting Dashboard",
-                welcome_desc: "Use the left navigation menu (or mobile top menu) to access Open Studio reporting forms, Ecosystem Mastery (EMS), LOB Champion, Sales Coach Monthly Tasks, and the self-service data matching portal.",
+                welcome_desc: "Use the left sidebar or the App Dock on the mobile simulation above to access reporting forms.",
                 card_os_title: "Open Studio Report",
                 card_os_sub: "Presenter & Participant Schedule",
                 schedule_weekday: "Weekdays (Mon – Fri)",
-                schedule_weekend: "Weekends (Sat – Sun)",
-                card_os_note: "Save documentation photos and videos in your respective Google Drive folders.",
                 btn_submit_os: "Submit Open Studio",
                 card_ems_title: "Ecosystem Mastery (EMS)",
                 card_ems_sub: "Daily 5-Minute Training Program",
                 card_ems_desc: "Conducted daily right after morning and afternoon briefings to sharpen product demos & probing skills.",
-                ems_materials: "Main Materials Choices:",
-                ems_m1_title: "Product Demo:",
-                ems_m1_desc: "Mac & Apple Watch features",
-                ems_m2_title: "Accessories Tips:",
-                ems_m2_desc: "Store accessory benefits",
-                ems_m3_title: "Questions Exercise:",
-                ems_m3_desc: "Min. 3 probing questions",
                 btn_submit_ems: "Link Report National EMS",
                 card_lob_title: "LOB Champion Submission",
                 card_lob_sub: "Shift Sales Reporting",
-                card_lob_desc: "LOB Champions must submit after each shift exclusively for",
-                card_lob_note: "Submission must be made on the same day before leaving.",
+                card_lob_desc: "LOB Champions must submit after each shift exclusively for their designated LOB unit sales.",
                 btn_submit_lob: "Submit LOB Champion",
                 card_coach_title: "Sales Coach Monthly Task",
                 card_coach_sub: "Deadline: 5th of Each Month",
-                card_coach_desc: "Sales Coaches must collect proof of monthly task access and submit it to their respective Store Head or Store Trainer.",
-                card_coach_note: "The deadline for collection is before the 5th of every month.",
-                card_coach_footer: "Direct submission to Store Head / Store Trainer",
-                weather_badge: "Live Weather",
-                weather_desc: "Clear / Sunny",
+                card_coach_desc: "Sales Coaches must collect proof of monthly task access and submit it to their Store Head or Store Trainer.",
                 card_data_title: "Data Matching Information",
                 card_data_sub: "Self-Check & Data Synchronization",
-                card_data_desc: "Access the data matching system using your",
-                card_data_desc2: "ID to view your status and data summary independently.",
-                data_steps_title: "Data Correction Procedure:",
-                data_step1: "1. If there is an error, report it immediately to your SPV or Store Trainer (ST).",
-                data_step2: "2. Attach PDF proof to speed up the correction process.",
-                data_step3: "3. Once corrected, ask the HO Trainer to resync.",
+                card_data_desc: "Access the data matching system using your ID to view your status independently.",
                 btn_data_access: "Access Data Matching Portal"
             }
         };
@@ -531,6 +451,7 @@
             
             document.getElementById('daily-motivation-quote').textContent = `"${selected.quote}"`;
             document.getElementById('daily-motivation-author').textContent = selected.author;
+            document.getElementById('phone-motivation-quote').textContent = `"${selected.quote}"`;
         }
 
         function changeLanguage(lang) {
@@ -544,14 +465,12 @@
             setDailyMotivation(lang);
         }
 
-        // Tab Switching Logic (Each sidebar item shows its own unique section)
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => {
                 el.classList.add('hidden');
             });
             document.getElementById('tab-' + tabId).classList.remove('hidden');
 
-            // Update active states on sidebar buttons
             const navButtons = document.querySelectorAll('aside nav button');
             navButtons.forEach(btn => {
                 btn.className = "w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left";
@@ -561,42 +480,18 @@
             if (activeBtn) {
                 activeBtn.className = "w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 font-medium transition text-left";
             }
-
-            // Close mobile sidebar on select
-            if (window.innerWidth < 768) {
-                toggleSidebar();
-            }
         }
 
-        // Sidebar Toggle for Mobile
-        const sidebar = document.getElementById('sidebar');
-        const sidebarToggle = document.getElementById('sidebar-toggle');
-        const sidebarClose = document.getElementById('sidebar-close');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-
-        function toggleSidebar() {
-            sidebar.classList.toggle('-translate-x-full');
-            sidebarOverlay.classList.toggle('hidden');
-        }
-
-        sidebarToggle.addEventListener('click', toggleSidebar);
-        sidebarClose.addEventListener('click', toggleSidebar);
-        sidebarOverlay.addEventListener('click', toggleSidebar);
-
-        // Theme Toggle Logic
         const htmlElement = document.documentElement;
         const desktopThemeIcon = document.getElementById('desktop-theme-icon');
-        const mobileThemeIcon = document.getElementById('mobile-theme-icon');
         const themeText = document.getElementById('theme-text');
 
         function updateThemeUI(isDark) {
             if (isDark) {
                 desktopThemeIcon.className = 'fa-solid fa-sun';
-                mobileThemeIcon.className = 'fa-solid fa-sun';
                 themeText.textContent = currentLang === 'id' ? 'Mode Terang' : 'Light Mode';
             } else {
                 desktopThemeIcon.className = 'fa-solid fa-moon';
-                mobileThemeIcon.className = 'fa-solid fa-moon';
                 themeText.textContent = currentLang === 'id' ? 'Mode Gelap' : 'Dark Mode';
             }
         }
@@ -621,7 +516,6 @@
             }
         }
 
-        // Live Clock & Date
         function updateClock() {
             const now = new Date();
             const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -630,13 +524,10 @@
 
             document.getElementById('live-date').textContent = dateStr;
             document.getElementById('live-time').textContent = timeStr;
-            document.getElementById('mobile-live-date').textContent = dateStr;
-            document.getElementById('mobile-live-time').textContent = timeStr;
         }
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Initialize motivation on load
         setDailyMotivation('id');
     </script>
 </body>
