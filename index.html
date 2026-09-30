@@ -68,6 +68,14 @@
                         <i class="fa-solid fa-file-shield w-5"></i>
                         <span data-i18n="nav_coach">Sales Coach Task</span>
                     </button>
+                    <button onclick="switchTab('coach-delete')" id="nav-btn-coach-delete" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-user-minus w-5"></i>
+                        <span data-i18n="nav_coach_delete">Hapus Akun Coach</span>
+                    </button>
+                    <button onclick="switchTab('streamz')" id="nav-btn-streamz" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-user-gear w-5"></i>
+                        <span data-i18n="nav_streamz">Akun StreamzAI</span>
+                    </button>
                     <button onclick="switchTab('data')" id="nav-btn-data" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
                         <i class="fa-solid fa-database w-5"></i>
                         <span data-i18n="nav_data">Pemadanan Data</span>
@@ -136,7 +144,7 @@
                     <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
                         <h3 class="font-bold text-base mb-2" data-i18n="welcome_heading">Dashboard Operasional & Pelaporan</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="welcome_desc">
-                            Gunakan sidebar di kiri atau Dock ala iPhone di bagian bawah layar untuk mengakses formulir laporan Open Studio, Ecosystem Mastery (EMS), LOB Champion, Monthly Task Sales Coach, hingga portal pemadanan data mandiri.
+                            Gunakan sidebar di kiri atau Dock ala iPhone di bagian bawah layar untuk mengakses informasi Sales Coach Task, alur pembuatan akun Sales Coach & StreamzAI, hingga portal pemadanan data mandiri.
                         </p>
                     </div>
                 </div>
@@ -232,7 +240,7 @@
                     </div>
                 </div>
 
-                <!-- TAB 5: SALES COACH TASK -->
+                <!-- TAB 5: SALES COACH TASK & ALUR PEMBUATAN -->
                 <div id="tab-coach" class="tab-content space-y-6 hidden">
                     <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
                         <div class="flex items-center space-x-3">
@@ -240,25 +248,89 @@
                                 <i class="fa-solid fa-file-shield text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-base" data-i18n="card_coach_title">Sales Coach Monthly Task</h3>
+                                <h3 class="font-bold text-base" data-i18n="card_coach_title">Sales Coach Monthly Task & Alur Pembuatan Akun</h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_coach_sub">Deadline: Tanggal 5 Setiap Bulan</p>
                             </div>
                         </div>
 
-                        <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                        <div class="text-xs space-y-3 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
                             <p data-i18n="coach_desc">
-                                Pengumpulan bukti akses Monthly Task wajib diserahkan kepada Kepala Toko (Store Head) atau Store Trainer masing-masing selambat-lambatnya sebelum tanggal 5 setiap bulannya.
+                                Pengumpulan bukti akses Monthly Task wajib diserahkan kepada Kepala Toko (Store Head) atau Store Trainer masing-masing selambat-lambatnya sebelum tanggal 5 setiap bulannya. Pastikan seluruh progres dan tugas terselesaikan tepat waktu.
                             </p>
                         </div>
 
-                        <a href="https://forms.gle/YOUR_FORM_LINK_HERE" target="_blank" class="w-full py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
-                            <span data-i18n="btn_submit_coach">Submit Sales Coach Task</span>
+                        <div class="text-xs space-y-3 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p class="font-semibold text-slate-700 dark:text-slate-200" data-i18n="coach_rule_header">Alur Pembuatan Akun Sales Coach:</p>
+                            <ol class="list-decimal pl-4 space-y-2">
+                                <li data-i18n="coach_rule_1">Staff tersebut sudah mengikuti Training New Staff 12 Hari.</li>
+                                <li data-i18n="coach_rule_2">Buatkan email <code class="bg-slate-200 dark:bg-slate-800 px-1 py-0.5 rounded text-brand-600 dark:text-brand-400">digimap@gmail</code>.</li>
+                                <li data-i18n="coach_rule_3">Link pendaftaran silahkan berkoordinasi dengan Store Trainer atau SPV.</li>
+                                <li data-i18n="coach_rule_4">Batas pembuatan akun Sales Coach adalah tanggal 1-10 pada setiap bulannya.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 6: PERMOHONAN PENGHAPUSAN AKUN SALES COACH -->
+                <div id="tab-coach-delete" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-xl">
+                                <i class="fa-solid fa-user-minus text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_coach_delete_title">Permohonan Penghapusan Akun Sales Coach</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_coach_delete_sub">Sales Coach Account Removal Data</p>
+                            </div>
+                        </div>
+
+                        <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p data-i18n="coach_delete_desc">
+                                Gunakan tautan spreadsheet resmi di bawah ini untuk mengajukan permohonan penghapusan akun Sales Coach bagi staf atau store Anda.
+                            </p>
+                        </div>
+
+                        <a href="https://docs.google.com/spreadsheets/d/1WhYyHN8gu6QFtoeGVzDpgGQfuv3B74Bc894oFCwrJ_8/edit?gid=367708216#gid=367708216" target="_blank" class="w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_submit_coach_delete">Buka Spreadsheet Penghapusan Akun Coach</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- TAB 6: PEMADANAN DATA -->
+                <!-- TAB 7: AKUN STREAMZAI & ALUR -->
+                <div id="tab-streamz" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-sky-50 dark:bg-sky-900/30 text-sky-600 dark:text-sky-400 rounded-xl">
+                                <i class="fa-solid fa-user-gear text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_streamz_title">Alur Pembuatan Akun Streamz AI</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_streamz_sub">All Store Registration / Move / Delete</p>
+                            </div>
+                        </div>
+
+                        <div class="text-xs space-y-3 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p class="font-semibold text-slate-700 dark:text-slate-200" data-i18n="streamz_rule_header">Alur Pembuatan Akun Streamz AI:</p>
+                            <ol class="list-decimal pl-4 space-y-2">
+                                <li data-i18n="streamz_rule_1">Staff tersebut sudah mengikuti Training New Staff 12 Hari.</li>
+                                <li data-i18n="streamz_rule_2">DM trainer area masing-masing dengan format:</li>
+                            </ol>
+                            <div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700 font-mono text-[11px] space-y-1 text-slate-700 dark:text-slate-200">
+                                <p>Nama Lengkap :</p>
+                                <p>Email Sales Coach :</p>
+                                <p>Kode Toko :</p>
+                            </div>
+                        </div>
+
+                        <a href="https://docs.google.com/spreadsheets/d/1hFXS71Yiyn1thIWAwfc2zzbfwWvG1rwD2Vfg6qsiNxU/edit?gid=1575022625#gid=1575022625" target="_blank" class="w-full py-3 px-4 bg-sky-600 hover:bg-sky-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_streamz_access">Akses Data Akun StreamzAI (All Store)</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TAB 8: PEMADANAN DATA -->
                 <div id="tab-data" class="tab-content space-y-6 hidden">
                     <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
                         <div class="flex items-center space-x-3">
@@ -298,26 +370,32 @@
         </main>
     </div>
 
-    <!-- DOCK IPHONE UTAMA KHUSUS TAMPILAN MOBILE (Floating iOS Dock di bagian bawah layar fisik HP pengguna) -->
+    <!-- DOCK IPHONE UTAMA KHUSUS TAMPILAN MOBILE -->
     <div class="md:hidden fixed bottom-3 left-0 right-0 z-50 flex justify-center px-4">
-        <div class="w-full max-w-sm bg-white/75 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[32px] px-3 py-2.5 shadow-2xl border border-white/40 dark:border-slate-700/60 flex justify-around items-center">
-            <button onclick="switchTab('landing')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-brand-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Landing">
-                <i class="fa-solid fa-house text-xs"></i>
+        <div class="w-full max-w-sm bg-white/75 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[32px] px-2 py-2 shadow-2xl border border-white/40 dark:border-slate-700/60 flex justify-around items-center">
+            <button onclick="switchTab('landing')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-brand-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Landing">
+                <i class="fa-solid fa-house text-[9px]"></i>
             </button>
-            <button onclick="switchTab('open-studio')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Open Studio">
-                <i class="fa-solid fa-chalkboard-user text-xs"></i>
+            <button onclick="switchTab('open-studio')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Open Studio">
+                <i class="fa-solid fa-chalkboard-user text-[9px]"></i>
             </button>
-            <button onclick="switchTab('ems')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="EMS">
-                <i class="fa-solid fa-bolt text-xs"></i>
+            <button onclick="switchTab('ems')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="EMS">
+                <i class="fa-solid fa-bolt text-[9px]"></i>
             </button>
-            <button onclick="switchTab('lob')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="LOB">
-                <i class="fa-solid fa-trophy text-xs"></i>
+            <button onclick="switchTab('lob')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="LOB">
+                <i class="fa-solid fa-trophy text-[9px]"></i>
             </button>
-            <button onclick="switchTab('coach')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Sales Coach">
-                <i class="fa-solid fa-file-shield text-xs"></i>
+            <button onclick="switchTab('coach')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Sales Coach Task">
+                <i class="fa-solid fa-file-shield text-[9px]"></i>
             </button>
-            <button onclick="switchTab('data')" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center shadow-lg active:scale-90 transition-all duration-200" title="Data">
-                <i class="fa-solid fa-database text-xs"></i>
+            <button onclick="switchTab('coach-delete')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Hapus Akun">
+                <i class="fa-solid fa-user-minus text-[9px]"></i>
+            </button>
+            <button onclick="switchTab('streamz')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="StreamzAI">
+                <i class="fa-solid fa-user-gear text-[9px]"></i>
+            </button>
+            <button onclick="switchTab('data')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Data">
+                <i class="fa-solid fa-database text-[9px]"></i>
             </button>
         </div>
     </div>
@@ -349,6 +427,8 @@
                 nav_ems: "Ecosystem Mastery",
                 nav_lob: "LOB Champion",
                 nav_coach: "Sales Coach Task",
+                nav_coach_delete: "Hapus Akun Coach",
+                nav_streamz: "Akun StreamzAI",
                 nav_data: "Pemadanan Data",
                 lang_label: "Bahasa",
                 header_welcome: "Selamat Datang di Portal Pelatihan",
@@ -356,7 +436,7 @@
                 motiv_badge: "💡 Motivasi Karyawan Harian",
                 motiv_footer: "Selalu Berikan yang Terbaik!",
                 welcome_heading: "Dashboard Operasional & Pelaporan",
-                welcome_desc: "Gunakan sidebar di kiri atau Dock aplikasi ala iPhone di bawah untuk mengakses formulir laporan dengan cepat.",
+                welcome_desc: "Gunakan sidebar di kiri atau Dock aplikasi ala iPhone di bawah untuk mengakses informasi Sales Coach Task, alur pembuatan akun Sales Coach & StreamzAI, hingga portal pemadanan data mandiri.",
                 
                 // Open Studio
                 card_os_title: "Open Studio Report",
@@ -383,11 +463,29 @@
                 lob_desc: "LOB Champion wajib melakukan submit setiap selesai shift untuk penjualan unit LOB Champion masing-masing selama shift berlangsung hingga jam kepulangan shift berakhir. Submit wajib dilakukan pada hari yang sama sesuai tanggal transaksi.",
                 btn_submit_lob: "Submit LOB Champion",
 
-                // Sales Coach Task
-                card_coach_title: "Sales Coach Monthly Task",
+                // Sales Coach Task & Rules
+                card_coach_title: "Sales Coach Monthly Task & Alur Pembuatan Akun",
                 card_coach_sub: "Deadline: Tanggal 5 Setiap Bulan",
-                coach_desc: "Pengumpulan bukti akses Monthly Task wajib diserahkan kepada Kepala Toko (Store Head) atau Store Trainer masing-masing selambat-lambatnya sebelum tanggal 5 setiap bulannya.",
-                btn_submit_coach: "Submit Sales Coach Task",
+                coach_desc: "Pengumpulan bukti akses Monthly Task wajib diserahkan kepada Kepala Toko (Store Head) atau Store Trainer masing-masing selambat-lambatnya sebelum tanggal 5 setiap bulannya. Pastikan seluruh progres dan tugas terselesaikan tepat waktu.",
+                coach_rule_header: "Alur Pembuatan Akun Sales Coach:",
+                coach_rule_1: "Staff tersebut sudah mengikuti Training New Staff 12 Hari.",
+                coach_rule_2: "Buatkan email nama.digimap@gmail.com",
+                coach_rule_3: "Link pendaftaran silahkan berkoordinasi dengan Store Trainer atau SPV.",
+                coach_rule_4: "Batas pembuatan akun Sales Coach adalah tanggal 1-10 pada setiap bulannya.",
+
+                // Coach Delete
+                card_coach_delete_title: "Permohonan Penghapusan Akun Sales Coach",
+                card_coach_delete_sub: "Sales Coach Account Removal Data",
+                coach_delete_desc: "Gunakan tautan spreadsheet resmi di bawah ini untuk mengajukan permohonan penghapusan akun Sales Coach bagi staf atau store Anda.",
+                btn_submit_coach_delete: "Buka Spreadsheet Penghapusan Akun Coach",
+
+                // StreamzAI Account & Rules
+                card_streamz_title: "Alur Pembuatan Akun Streamz AI",
+                card_streamz_sub: "All Store Registration / Move / Delete",
+                streamz_rule_header: "Alur Pembuatan Akun Streamz AI:",
+                streamz_rule_1: "Staff tersebut sudah mengikuti Training New Staff 12 Hari.",
+                streamz_rule_2: "DM trainer area masing-masing dengan format:",
+                btn_streamz_access: "Akses Data Akun StreamzAI (All Store)",
 
                 // Pemadanan Data
                 card_data_title: "Informasi Pemadanan Data",
@@ -403,6 +501,8 @@
                 nav_ems: "Ecosystem Mastery",
                 nav_lob: "LOB Champion",
                 nav_coach: "Sales Coach Task",
+                nav_coach_delete: "Coach Account Delete",
+                nav_streamz: "StreamzAI Account",
                 nav_data: "Data Matching",
                 lang_label: "Language",
                 header_welcome: "Welcome to Training Portal",
@@ -410,7 +510,7 @@
                 motiv_badge: "💡 Daily Employee Motivation",
                 motiv_footer: "Always Give Your Best!",
                 welcome_heading: "Operations & Reporting Dashboard",
-                welcome_desc: "Use the left sidebar or the iPhone-style dock below to quickly access reporting forms.",
+                welcome_desc: "Use the left sidebar or the iPhone-style dock below to quickly access Sales Coach task information, account workflows, and StreamzAI management.",
                 
                 // Open Studio
                 card_os_title: "Open Studio Report",
@@ -437,11 +537,29 @@
                 lob_desc: "LOB Champion must submit at the end of each shift for their own LOB Champion unit sales during their shift until clocking out. Submissions must be done on the same day as the transaction date.",
                 btn_submit_lob: "Submit LOB Champion",
 
-                // Sales Coach Task
-                card_coach_title: "Sales Coach Monthly Task",
+                // Sales Coach Task & Rules
+                card_coach_title: "Sales Coach Monthly Task & Account Workflow",
                 card_coach_sub: "Deadline: 5th of Each Month",
-                coach_desc: "Submit monthly task access proofs to your respective Store Head or Store Trainer before the 5th of every month.",
-                btn_submit_coach: "Submit Sales Coach Task",
+                coach_desc: "Monthly task access proofs must be submitted to the respective Store Head or Store Trainer no later than the 5th of every month. Ensure all progress and tasks are completed on time.",
+                coach_rule_header: "Sales Coach Account Creation Workflow:",
+                coach_rule_1: "Staff has completed the 12-Day New Staff Training.",
+                coach_rule_2: "Create a digimap@gmail email.",
+                coach_rule_3: "Coordinate with Store Trainer or SPV for the registration link.",
+                coach_rule_4: "Sales Coach account creation deadline is from the 1st to the 10th of every month.",
+
+                // Coach Delete
+                card_coach_delete_title: "Sales Coach Account Deletion Request",
+                card_coach_delete_sub: "Sales Coach Account Removal Data",
+                coach_delete_desc: "Use the official spreadsheet link below to request Sales Coach account deletions for your staff or store.",
+                btn_submit_coach_delete: "Open Coach Deletion Spreadsheet",
+
+                // StreamzAI Account & Rules
+                card_streamz_title: "Streamz AI Account Creation Workflow",
+                card_streamz_sub: "All Store Registration / Move / Delete",
+                streamz_rule_header: "Streamz AI Account Creation Workflow:",
+                streamz_rule_1: "Staff has completed the 12-Day New Staff Training.",
+                streamz_rule_2: "DM your respective area trainer with the format:",
+                btn_streamz_access: "Access StreamzAI Data (All Store)",
 
                 // Pemadanan Data
                 card_data_title: "Data Matching Information",
