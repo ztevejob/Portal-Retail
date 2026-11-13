@@ -64,6 +64,10 @@
                         <i class="fa-solid fa-trophy w-5"></i>
                         <span data-i18n="nav_lob">LOB Champion</span>
                     </button>
+                    <button onclick="switchTab('demounit')" id="nav-btn-demounit" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-mobile-screen-button w-5"></i>
+                        <span data-i18n="nav_demounit">Demo Unit</span>
+                    </button>
                     <button onclick="switchTab('coach')" id="nav-btn-coach" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
                         <i class="fa-solid fa-file-shield w-5"></i>
                         <span data-i18n="nav_coach">Sales Coach Task</span>
@@ -144,7 +148,7 @@
                     <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
                         <h3 class="font-bold text-base mb-2" data-i18n="welcome_heading">Dashboard Operasional & Pelaporan</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="welcome_desc">
-                            Gunakan sidebar di kiri atau Dock ala iPhone di bagian bawah layar untuk mengakses informasi Sales Coach Task, alur pembuatan akun Sales Coach & StreamzAI, hingga portal pemadanan data mandiri.
+                            Gunakan sidebar di kiri atau Dock ala iPhone di bagian bawah layar untuk mengakses informasi Sales Coach Task, LOB Champion, Demo Unit, alur pembuatan akun Sales Coach & StreamzAI, hingga portal pemadanan data mandiri.
                         </p>
                     </div>
                 </div>
@@ -222,25 +226,51 @@
                                 <i class="fa-solid fa-trophy text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-base" data-i18n="card_lob_title">LOB Champion Submission</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_lob_sub">Shift Sales Reporting</p>
+                                <h3 class="font-bold text-base" data-i18n="card_lob_title">LOB Champion Portal</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_lob_sub">Sales Reporting & Dashboard</p>
                             </div>
                         </div>
 
                         <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
                             <p data-i18n="lob_desc">
-                                LOB Champion wajib melakukan submit setiap selesai shift untuk penjualan unit LOB Champion masing-masing selama shift berlangsung hingga jam kepulangan shift berakhir. Submit wajib dilakukan pada hari yang sama sesuai tanggal transaksi.
+                                Akses portal LOB Champion untuk memantau pencapaian, rekapitulasi penjualan lini produk, serta pelaporan shift secara berkala.
                             </p>
                         </div>
 
-                        <a href="https://forms.gle/wBqvUTnbsCaTWFgM9" target="_blank" class="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
-                            <span data-i18n="btn_submit_lob">Submit LOB Champion</span>
+                        <a href="https://ztevejob.github.io/LOB-Champion/" target="_blank" class="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_submit_lob">Buka Portal LOB Champion</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- TAB 5: SALES COACH TASK & ALUR PEMBUATAN -->
+                <!-- TAB 5: DEMO UNIT -->
+                <div id="tab-demounit" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl">
+                                <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_demounit_title">Demo Unit Portal</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_demounit_sub">Demo Device Management & Status</p>
+                            </div>
+                        </div>
+
+                        <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p data-i18n="demounit_desc">
+                                Gunakan portal Demo Unit untuk memantau status perangkat demo, ketersediaan unit, serta pelaporan pemeliharaan perangkat display toko.
+                            </p>
+                        </div>
+
+                        <a href="https://ztevejob.github.io/demounit/" target="_blank" class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_submit_demounit">Buka Portal Demo Unit</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TAB 6: SALES COACH TASK & ALUR PEMBUATAN -->
                 <div id="tab-coach" class="tab-content space-y-6 hidden">
                     <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
                         <div class="flex items-center space-x-3">
@@ -271,7 +301,7 @@
                     </div>
                 </div>
 
-                <!-- TAB 6: PERMOHONAN PENGHAPUSAN AKUN SALES COACH -->
+                <!-- TAB 7: PERMOHONAN PENGHAPUSAN AKUN SALES COACH -->
                 <div id="tab-coach-delete" class="tab-content space-y-6 hidden">
                     <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
                         <div class="flex items-center space-x-3">
@@ -297,7 +327,7 @@
                     </div>
                 </div>
 
-                <!-- TAB 7: AKUN STREAMZAI & ALUR -->
+                <!-- TAB 8: AKUN STREAMZAI & ALUR -->
                 <div id="tab-streamz" class="tab-content space-y-6 hidden">
                     <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
                         <div class="flex items-center space-x-3">
@@ -330,7 +360,7 @@
                     </div>
                 </div>
 
-                <!-- TAB 8: PEMADANAN DATA -->
+                <!-- TAB 9: PEMADANAN DATA -->
                 <div id="tab-data" class="tab-content space-y-6 hidden">
                     <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
                         <div class="flex items-center space-x-3">
@@ -372,29 +402,32 @@
 
     <!-- DOCK IPHONE UTAMA KHUSUS TAMPILAN MOBILE -->
     <div class="md:hidden fixed bottom-3 left-0 right-0 z-50 flex justify-center px-4">
-        <div class="w-full max-w-sm bg-white/75 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[32px] px-2 py-2 shadow-2xl border border-white/40 dark:border-slate-700/60 flex justify-around items-center">
-            <button onclick="switchTab('landing')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-brand-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Landing">
+        <div class="w-full max-w-md bg-white/75 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[32px] px-2 py-2 shadow-2xl border border-white/40 dark:border-slate-700/60 flex justify-around items-center overflow-x-auto gap-1">
+            <button onclick="switchTab('landing')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-brand-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Landing">
                 <i class="fa-solid fa-house text-[9px]"></i>
             </button>
-            <button onclick="switchTab('open-studio')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Open Studio">
+            <button onclick="switchTab('open-studio')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Open Studio">
                 <i class="fa-solid fa-chalkboard-user text-[9px]"></i>
             </button>
-            <button onclick="switchTab('ems')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="EMS">
+            <button onclick="switchTab('ems')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="EMS">
                 <i class="fa-solid fa-bolt text-[9px]"></i>
             </button>
-            <button onclick="switchTab('lob')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="LOB">
+            <button onclick="switchTab('lob')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="LOB Champion">
                 <i class="fa-solid fa-trophy text-[9px]"></i>
             </button>
-            <button onclick="switchTab('coach')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Sales Coach Task">
+            <button onclick="switchTab('demounit')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Demo Unit">
+                <i class="fa-solid fa-mobile-screen-button text-[9px]"></i>
+            </button>
+            <button onclick="switchTab('coach')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Sales Coach Task">
                 <i class="fa-solid fa-file-shield text-[9px]"></i>
             </button>
-            <button onclick="switchTab('coach-delete')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Hapus Akun">
+            <button onclick="switchTab('coach-delete')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-red-500 to-red-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Hapus Akun">
                 <i class="fa-solid fa-user-minus text-[9px]"></i>
             </button>
-            <button onclick="switchTab('streamz')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="StreamzAI">
+            <button onclick="switchTab('streamz')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="StreamzAI">
                 <i class="fa-solid fa-user-gear text-[9px]"></i>
             </button>
-            <button onclick="switchTab('data')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200" title="Data">
+            <button onclick="switchTab('data')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Data">
                 <i class="fa-solid fa-database text-[9px]"></i>
             </button>
         </div>
@@ -426,6 +459,7 @@
                 nav_open_studio: "Open Studio",
                 nav_ems: "Ecosystem Mastery",
                 nav_lob: "LOB Champion",
+                nav_demounit: "Demo Unit",
                 nav_coach: "Sales Coach Task",
                 nav_coach_delete: "Hapus Akun Coach",
                 nav_streamz: "Akun StreamzAI",
@@ -436,7 +470,7 @@
                 motiv_badge: "💡 Motivasi Karyawan Harian",
                 motiv_footer: "Selalu Berikan yang Terbaik!",
                 welcome_heading: "Dashboard Operasional & Pelaporan",
-                welcome_desc: "Gunakan sidebar di kiri atau Dock aplikasi ala iPhone di bawah untuk mengakses informasi Sales Coach Task, alur pembuatan akun Sales Coach & StreamzAI, hingga portal pemadanan data mandiri.",
+                welcome_desc: "Gunakan sidebar di kiri atau Dock aplikasi ala iPhone di bawah untuk mengakses informasi Sales Coach Task, LOB Champion, Demo Unit, alur pembuatan akun Sales Coach & StreamzAI, hingga portal pemadanan data mandiri.",
                 
                 // Open Studio
                 card_os_title: "Open Studio Report",
@@ -458,10 +492,16 @@
                 btn_submit_ems: "Link Report National EMS",
 
                 // LOB
-                card_lob_title: "LOB Champion Submission",
-                card_lob_sub: "Shift Sales Reporting",
-                lob_desc: "LOB Champion wajib melakukan submit setiap selesai shift untuk penjualan unit LOB Champion masing-masing selama shift berlangsung hingga jam kepulangan shift berakhir. Submit wajib dilakukan pada hari yang sama sesuai tanggal transaksi.",
-                btn_submit_lob: "Submit LOB Champion",
+                card_lob_title: "LOB Champion Portal",
+                card_lob_sub: "Sales Reporting & Dashboard",
+                lob_desc: "Akses portal LOB Champion untuk memantau pencapaian, rekapitulasi penjualan lini produk, serta pelaporan shift secara berkala.",
+                btn_submit_lob: "Buka Portal LOB Champion",
+
+                // Demo Unit
+                card_demounit_title: "Demo Unit Portal",
+                card_demounit_sub: "Demo Device Management & Status",
+                demounit_desc: "Gunakan portal Demo Unit untuk memantau status perangkat demo, ketersediaan unit, serta pelaporan pemeliharaan perangkat display toko.",
+                btn_submit_demounit: "Buka Portal Demo Unit",
 
                 // Sales Coach Task & Rules
                 card_coach_title: "Sales Coach Monthly Task & Alur Pembuatan Akun",
@@ -500,6 +540,7 @@
                 nav_open_studio: "Open Studio",
                 nav_ems: "Ecosystem Mastery",
                 nav_lob: "LOB Champion",
+                nav_demounit: "Demo Unit",
                 nav_coach: "Sales Coach Task",
                 nav_coach_delete: "Coach Account Delete",
                 nav_streamz: "StreamzAI Account",
@@ -510,7 +551,7 @@
                 motiv_badge: "💡 Daily Employee Motivation",
                 motiv_footer: "Always Give Your Best!",
                 welcome_heading: "Operations & Reporting Dashboard",
-                welcome_desc: "Use the left sidebar or the iPhone-style dock below to quickly access Sales Coach task information, account workflows, and StreamzAI management.",
+                welcome_desc: "Use the left sidebar or the iPhone-style dock below to quickly access Sales Coach task information, LOB Champion, Demo Unit, account workflows, and StreamzAI management.",
                 
                 // Open Studio
                 card_os_title: "Open Studio Report",
@@ -532,10 +573,16 @@
                 btn_submit_ems: "Link Report National EMS",
 
                 // LOB
-                card_lob_title: "LOB Champion Submission",
-                card_lob_sub: "Shift Sales Reporting",
-                lob_desc: "LOB Champion must submit at the end of each shift for their own LOB Champion unit sales during their shift until clocking out. Submissions must be done on the same day as the transaction date.",
-                btn_submit_lob: "Submit LOB Champion",
+                card_lob_title: "LOB Champion Portal",
+                card_lob_sub: "Sales Reporting & Dashboard",
+                lob_desc: "Access the LOB Champion portal to monitor achievements, product line sales recap, and periodic shift reports.",
+                btn_submit_lob: "Open LOB Champion Portal",
+
+                // Demo Unit
+                card_demounit_title: "Demo Unit Portal",
+                card_demounit_sub: "Demo Device Management & Status",
+                demounit_desc: "Use the Demo Unit portal to monitor demo device status, unit availability, and store display maintenance reporting.",
+                btn_submit_demounit: "Open Demo Unit Portal",
 
                 // Sales Coach Task & Rules
                 card_coach_title: "Sales Coach Monthly Task & Account Workflow",
