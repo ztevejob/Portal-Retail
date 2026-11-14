@@ -76,6 +76,10 @@
                         <i class="fa-solid fa-user-gear w-5"></i>
                         <span data-i18n="nav_streamz">Akun StreamzAI</span>
                     </button>
+                    <button onclick="switchTab('ops-hub')" id="nav-btn-ops-hub" class="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition text-left">
+                        <i class="fa-solid fa-chart-line w-5"></i>
+                        <span data-i18n="nav_ops_hub">Aktivitas OPS EMS PNR</span>
+                    </button>
                 </nav>
             </div>
 
@@ -140,7 +144,7 @@
                     <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
                         <h3 class="font-bold text-base mb-2" data-i18n="welcome_heading">Dashboard Operasional & Pelaporan</h3>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="welcome_desc">
-                            Gunakan sidebar di kiri atau Dock ala iPhone di bagian bawah layar untuk mengakses informasi Sales Coach Task, LOB Champion, Demo Unit, hingga alur pembuatan akun Sales Coach & StreamzAI.
+                            Gunakan sidebar di kiri atau Dock ala iPhone di bagian bawah layar untuk mengakses informasi Sales Coach Task, LOB Champion, Demo Unit, hingga Aktivitas OPS EMS PNR.
                         </p>
                     </div>
                 </div>
@@ -262,7 +266,7 @@
                     </div>
                 </div>
 
-                <!-- TAB 6: SALES COACH TASK & HAPUS AKUN (DIGABUNGKAN) -->
+                <!-- TAB 6: SALES COACH TASK & HAPUS AKUN -->
                 <div id="tab-coach" class="tab-content space-y-6 hidden">
                     <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
                         <div class="flex items-center space-x-3">
@@ -281,7 +285,6 @@
                             </p>
                         </div>
 
-                        <!-- Tombol Link Monitor dan Dashboard Sales Coach -->
                         <a href="https://ztevejob.github.io/Sales-Coach-Submit/" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
                             <span data-i18n="btn_sales_coach_monitor">Monitor & Dashboard Sales Coach</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
@@ -297,7 +300,6 @@
                             </ol>
                         </div>
 
-                        <!-- Bagian Penghapusan Akun Coach yang Digabungkan -->
                         <div class="pt-4 border-t border-slate-200 dark:border-slate-700/60 space-y-3">
                             <div class="flex items-center space-x-3">
                                 <div class="p-2.5 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-xl">
@@ -354,12 +356,38 @@
                     </div>
                 </div>
 
+                <!-- TAB 8: AKTIVITAS OPS EMS PNR -->
+                <div id="tab-ops-hub" class="tab-content space-y-6 hidden">
+                    <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 rounded-xl">
+                                <i class="fa-solid fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_ops_hub_title">Akses Aktivitas OPS EMS PNR</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_ops_hub_sub">Password NIK Required</p>
+                            </div>
+                        </div>
+
+                        <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                            <p data-i18n="ops_hub_desc">
+                                Akses portal Activity Performance Hub untuk memantau performa dan aktivitas operasional EMS. Silakan masukkan NIK Anda sebagai password saat melakukan login.
+                            </p>
+                        </div>
+
+                        <a href="https://www.activityperformancehub.my.id" target="_blank" class="w-full py-3 px-4 bg-teal-600 hover:bg-teal-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                            <span data-i18n="btn_ops_hub_access">Buka Aktivitas OPS EMS PNR</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Footer -->
             <footer class="w-full border-t border-slate-200 dark:border-slate-800 py-4 text-center text-xs text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-slate-900/50 space-y-1">
                 <p>&copy; 2026 Training Department. All rights reserved.</p>
-                <p class="text-[11px] text-slate-400 dark:text-slate-500 font-medium">Concept and Curation by Novi Riyanto</p>
+                <p class="text-[11px] text-slate-400 dark:text-slate-500 font-medium">Concept & Curation by Novi Riyanto | Developed in collaboration with Gemini AI</p>
             </footer>
 
         </main>
@@ -383,11 +411,14 @@
             <button onclick="switchTab('demounit')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Demo Unit">
                 <i class="fa-solid fa-mobile-screen-button text-[9px]"></i>
             </button>
-            <button onclick="switchTab('coach')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Sales Coach Task & Delete">
+            <button onclick="switchTab('coach')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Sales Coach Task">
                 <i class="fa-solid fa-file-shield text-[9px]"></i>
             </button>
             <button onclick="switchTab('streamz')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="StreamzAI">
                 <i class="fa-solid fa-user-gear text-[9px]"></i>
+            </button>
+            <button onclick="switchTab('ops-hub')" class="w-8 h-8 rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 text-white flex items-center justify-center shadow-md active:scale-90 transition-all duration-200 shrink-0" title="Aktivitas OPS">
+                <i class="fa-solid fa-chart-line text-[9px]"></i>
             </button>
         </div>
     </div>
@@ -421,13 +452,14 @@
                 nav_demounit: "Demo Unit",
                 nav_coach: "Sales Coach Task",
                 nav_streamz: "Akun StreamzAI",
+                nav_ops_hub: "Aktivitas OPS EMS PNR",
                 lang_label: "Bahasa",
                 header_welcome: "Selamat Datang di Portal Pelatihan",
                 header_subtitle: "Sistem pelaporan operasional & retail harian",
                 motiv_badge: "💡 Motivasi Karyawan Harian",
                 motiv_footer: "Selalu Berikan yang Terbaik!",
                 welcome_heading: "Dashboard Operasional & Pelaporan",
-                welcome_desc: "Gunakan sidebar di kiri atau Dock aplikasi ala iPhone di bawah untuk mengakses informasi Sales Coach Task, LOB Champion, Demo Unit, alur pembuatan akun Sales Coach & StreamzAI.",
+                welcome_desc: "Gunakan sidebar di kiri atau Dock aplikasi ala iPhone di bawah untuk mengakses informasi Sales Coach Task, LOB Champion, Demo Unit, hingga Aktivitas OPS EMS PNR.",
                 
                 // Open Studio
                 card_os_title: "Open Studio Report",
@@ -471,7 +503,7 @@
                 coach_rule_3: "Link pendaftaran silahkan berkoordinasi dengan Store Trainer atau SPV.",
                 coach_rule_4: "Batas pembuatan akun Sales Coach adalah tanggal 1-10 pada setiap bulannya.",
 
-                // Coach Delete (Inside Tab Coach)
+                // Coach Delete
                 card_coach_delete_title: "Permohonan Penghapusan Akun Sales Coach",
                 card_coach_delete_sub: "Sales Coach Account Removal Data",
                 coach_delete_desc: "Gunakan tautan spreadsheet resmi di bawah ini untuk mengajukan permohonan penghapusan akun Sales Coach bagi staf atau store Anda.",
@@ -483,7 +515,13 @@
                 streamz_rule_header: "Alur Pembuatan Akun Streamz AI:",
                 streamz_rule_1: "Staff tersebut sudah mengikuti Training New Staff 12 Hari.",
                 streamz_rule_2: "DM trainer area masing-masing dengan format:",
-                btn_streamz_access: "Akses Data Akun StreamzAI (All Store)"
+                btn_streamz_access: "Akses Data Akun StreamzAI (All Store)",
+
+                // Aktivitas OPS EMS PNR
+                card_ops_hub_title: "Akses Aktivitas OPS EMS PNR",
+                card_ops_hub_sub: "Password NIK Required",
+                ops_hub_desc: "Akses portal Activity Performance Hub untuk memantau performa dan aktivitas operasional EMS. Silakan masukkan NIK Anda sebagai password saat melakukan login.",
+                btn_ops_hub_access: "Buka Aktivitas OPS EMS PNR"
             },
             en: {
                 portal_title: "Retail Portal",
@@ -494,13 +532,14 @@
                 nav_demounit: "Demo Unit",
                 nav_coach: "Sales Coach Task",
                 nav_streamz: "StreamzAI Account",
+                nav_ops_hub: "EMS PNR OPS Activity",
                 lang_label: "Language",
                 header_welcome: "Welcome to Training Portal",
                 header_subtitle: "Operational & daily retail reporting system",
                 motiv_badge: "💡 Daily Employee Motivation",
                 motiv_footer: "Always Give Your Best!",
                 welcome_heading: "Operations & Reporting Dashboard",
-                welcome_desc: "Use the left sidebar or the iPhone-style dock below to quickly access Sales Coach task information, LOB Champion, Demo Unit, and account workflows.",
+                welcome_desc: "Use the left sidebar or the iPhone-style dock below to quickly access Sales Coach task information, LOB Champion, Demo Unit, and EMS PNR OPS Activity.",
                 
                 // Open Studio
                 card_os_title: "Open Studio Report",
@@ -544,7 +583,7 @@
                 coach_rule_3: "Coordinate with Store Trainer or SPV for the registration link.",
                 coach_rule_4: "Sales Coach account creation deadline is from the 1st to the 10th of every month.",
 
-                // Coach Delete (Inside Tab Coach)
+                // Coach Delete
                 card_coach_delete_title: "Sales Coach Account Deletion Request",
                 card_coach_delete_sub: "Sales Coach Account Removal Data",
                 coach_delete_desc: "Use the official spreadsheet link below to request Sales Coach account deletions for your staff or store.",
@@ -556,7 +595,13 @@
                 streamz_rule_header: "Streamz AI Account Creation Workflow:",
                 streamz_rule_1: "Staff has completed the 12-Day New Staff Training.",
                 streamz_rule_2: "DM your respective area trainer with the format:",
-                btn_streamz_access: "Access StreamzAI Data (All Store)"
+                btn_streamz_access: "Access StreamzAI Data (All Store)",
+
+                // Aktivitas OPS EMS PNR
+                card_ops_hub_title: "EMS PNR OPS Activity Access",
+                card_ops_hub_sub: "Password NIK Required",
+                ops_hub_desc: "Access the Activity Performance Hub portal to monitor performance and operational activities of EMS. Please enter your NIK as your password when logging in.",
+                btn_ops_hub_access: "Open EMS PNR OPS Activity"
             }
         };
 
