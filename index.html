@@ -143,6 +143,14 @@
                             <span class="text-[11px] md:text-xs font-medium text-slate-700 dark:text-slate-200 leading-tight line-clamp-2" data-i18n="nav_ops_hub">Aktivitas OPS EMS PNR</span>
                         </button>
 
+                        <!-- 8. SA Assessment (Menu Baru) -->
+                        <button onclick="switchTab('sa-assessment')" class="group flex flex-col items-center p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-rose-50 dark:hover:bg-rose-900/20 border border-slate-200/80 dark:border-slate-700/60 transition active:scale-95 text-center">
+                            <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-rose-400 to-rose-600 text-white flex items-center justify-center shadow-md mb-2 group-hover:scale-105 transition">
+                                <i class="fa-solid fa-clipboard-check text-lg md:text-xl"></i>
+                            </div>
+                            <span class="text-[11px] md:text-xs font-medium text-slate-700 dark:text-slate-200 leading-tight line-clamp-2" data-i18n="nav_sa_assessment">SA Assessment</span>
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -402,6 +410,32 @@
                 </div>
             </div>
 
+            <!-- TAB 9: SA ASSESSMENT (BARU) -->
+            <div id="tab-sa-assessment" class="tab-content space-y-6 hidden">
+                <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-3 bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 rounded-xl">
+                            <i class="fa-solid fa-clipboard-check text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base" data-i18n="card_sa_title">SA Assessment Portal</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_sa_sub">Sales Associate Assessment System</p>
+                        </div>
+                    </div>
+
+                    <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                        <p data-i18n="sa_desc">
+                            Akses portal SA Assessment untuk evaluasi, pengujian kompetensi, serta pelaporan penilaian Sales Associate secara berkala.
+                        </p>
+                    </div>
+
+                    <a href="https://ztevejob.github.io/SA-Assesment/" target="_blank" class="w-full py-3 px-4 bg-rose-600 hover:bg-rose-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
+                        <span data-i18n="btn_submit_sa">Buka Portal SA Assessment</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
         </main>
 
         <!-- Footer -->
@@ -442,6 +476,7 @@
                 nav_coach: "Sales Coach Task",
                 nav_streamz: "Akun StreamzAI",
                 nav_ops_hub: "Aktivitas OPS EMS PNR",
+                nav_sa_assessment: "SA Assessment",
                 lang_label: "Bahasa",
                 header_welcome: "Selamat Datang di Portal Pelatihan",
                 header_subtitle: "Sistem pelaporan operasional & retail harian",
@@ -512,7 +547,13 @@
                 card_roster_title: "Isi Roster Bulanan & Kontak Trainer",
                 card_roster_sub: "Monthly Roster & Trainer WhatsApp Contacts",
                 roster_desc: "Gunakan tautan di bawah ini untuk mengisi roster bulanan serta terhubung langsung dengan nomor WhatsApp masing-masing trainer.",
-                btn_submit_roster: "Isi Roster Bulanan & Hubungi Trainer"
+                btn_submit_roster: "Isi Roster Bulanan & Hubungi Trainer",
+
+                // SA Assessment
+                card_sa_title: "SA Assessment Portal",
+                card_sa_sub: "Sales Associate Assessment System",
+                sa_desc: "Akses portal SA Assessment untuk evaluasi, pengujian kompetensi, serta pelaporan penilaian Sales Associate secara berkala.",
+                btn_submit_sa: "Buka Portal SA Assessment"
             },
             en: {
                 portal_title: "Retail Portal",
@@ -524,6 +565,7 @@
                 nav_coach: "Sales Coach Task",
                 nav_streamz: "StreamzAI Account",
                 nav_ops_hub: "EMS PNR OPS Activity",
+                nav_sa_assessment: "SA Assessment",
                 lang_label: "Language",
                 header_welcome: "Welcome to Training Portal",
                 header_subtitle: "Operational & daily retail reporting system",
@@ -594,7 +636,13 @@
                 card_roster_title: "Monthly Roster & Trainer Contacts",
                 card_roster_sub: "Monthly Roster & Trainer WhatsApp Contacts",
                 roster_desc: "Use the link below to fill out the monthly roster and connect directly with your respective trainers via WhatsApp.",
-                btn_submit_roster: "Fill Monthly Roster & Contact Trainer"
+                btn_submit_roster: "Fill Monthly Roster & Contact Trainer",
+
+                // SA Assessment
+                card_sa_title: "SA Assessment Portal",
+                card_sa_sub: "Sales Associate Assessment System",
+                sa_desc: "Access the SA Assessment portal for evaluations, competency testing, and periodic Sales Associate performance reporting.",
+                btn_submit_sa: "Open SA Assessment Portal"
             }
         };
 
