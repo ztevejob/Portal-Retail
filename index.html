@@ -111,12 +111,13 @@
                             <span class="text-[11px] md:text-xs font-medium text-slate-700 dark:text-slate-200 leading-tight line-clamp-2" data-i18n="nav_lob">LOB Champion</span>
                         </button>
 
-                        <!-- 4. Demo Unit -->
-                        <button onclick="switchTab('demounit')" class="group flex flex-col items-center p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 border border-slate-200/80 dark:border-slate-700/60 transition active:scale-95 text-center">
+                        <!-- 4. Demo Unit Audit (Setiap Jumat) -->
+                        <button onclick="switchTab('demounit')" class="group flex flex-col items-center p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 border border-slate-200/80 dark:border-slate-700/60 transition active:scale-95 text-center relative">
+                            <span class="absolute top-2 right-2 bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-300 text-[9px] font-bold px-1.5 py-0.5 rounded-md" data-i18n="badge_friday">Jumat</span>
                             <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-indigo-400 to-indigo-600 text-white flex items-center justify-center shadow-md mb-2 group-hover:scale-105 transition">
                                 <i class="fa-solid fa-mobile-screen-button text-lg md:text-xl"></i>
                             </div>
-                            <span class="text-[11px] md:text-xs font-medium text-slate-700 dark:text-slate-200 leading-tight line-clamp-2" data-i18n="nav_demounit">Demo Unit</span>
+                            <span class="text-[11px] md:text-xs font-medium text-slate-700 dark:text-slate-200 leading-tight line-clamp-2" data-i18n="nav_demounit">Demo Unit Audit</span>
                         </button>
 
                         <!-- 5. Sales Coach Task -->
@@ -143,7 +144,7 @@
                             <span class="text-[11px] md:text-xs font-medium text-slate-700 dark:text-slate-200 leading-tight line-clamp-2" data-i18n="nav_ops_hub">Aktivitas OPS EMS PNR</span>
                         </button>
 
-                        <!-- 8. SA Assessment (Menu Baru) -->
+                        <!-- 8. SA Assessment -->
                         <button onclick="switchTab('sa-assessment')" class="group flex flex-col items-center p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-rose-50 dark:hover:bg-rose-900/20 border border-slate-200/80 dark:border-slate-700/60 transition active:scale-95 text-center">
                             <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-rose-400 to-rose-600 text-white flex items-center justify-center shadow-md mb-2 group-hover:scale-105 transition">
                                 <i class="fa-solid fa-clipboard-check text-lg md:text-xl"></i>
@@ -246,27 +247,36 @@
                 </div>
             </div>
 
-            <!-- TAB 5: DEMO UNIT -->
+            <!-- TAB 5: DEMO UNIT WEEKLY AUDIT -->
             <div id="tab-demounit" class="tab-content space-y-6 hidden">
                 <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="p-3 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl">
-                            <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl">
+                                <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base" data-i18n="card_demounit_title">Demo Unit Weekly Audit</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_demounit_sub">Weekly Display Status & Readiness Check (Every Friday)</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="font-bold text-base" data-i18n="card_demounit_title">Demo Unit Portal</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="card_demounit_sub">Demo Device Management & Status</p>
-                        </div>
+                        <span class="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-[11px] font-bold px-2.5 py-1 rounded-lg border border-indigo-200 dark:border-indigo-800" data-i18n="demounit_schedule_badge">
+                            🗓️ Setiap Jumat
+                        </span>
                     </div>
 
-                    <div class="text-xs space-y-2 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
+                    <div class="text-xs space-y-3 text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50">
                         <p data-i18n="demounit_desc">
-                            Gunakan portal Demo Unit untuk memantau status perangkat demo, ketersediaan unit, serta pelaporan pemeliharaan perangkat display toko.
+                            Pengecekan dan pelaporan rutin yang wajib dilakukan <strong>setiap hari Jumat</strong> untuk memantau kondisi fisik, kelengkapan aksesoris, software demo, serta kesiapan operasional seluruh perangkat demo di toko.
                         </p>
+                        <div class="pt-2 border-t border-slate-200 dark:border-slate-700/50 text-[11px] text-indigo-600 dark:text-indigo-400 font-medium flex items-center">
+                            <i class="fa-solid fa-calendar-check mr-1.5"></i>
+                            <span data-i18n="demounit_note">Jadwal Submit: Wajib dilaporkan setiap hari Jumat sebelum tutup operasional toko.</span>
+                        </div>
                     </div>
 
                     <a href="https://ztevejob.github.io/demounit/" target="_blank" class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm rounded-xl text-center transition flex items-center justify-center space-x-2 shadow-sm">
-                        <span data-i18n="btn_submit_demounit">Buka Portal Demo Unit</span>
+                        <span data-i18n="btn_submit_demounit">Submit Status Demo Unit (Jumat)</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                     </a>
                 </div>
@@ -410,7 +420,7 @@
                 </div>
             </div>
 
-            <!-- TAB 9: SA ASSESSMENT (BARU) -->
+            <!-- TAB 9: SA ASSESSMENT -->
             <div id="tab-sa-assessment" class="tab-content space-y-6 hidden">
                 <div class="max-w-xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-4">
                     <div class="flex items-center space-x-3">
@@ -454,14 +464,64 @@
                 { quote: "Setiap interaksi dengan pelanggan adalah kesempatan emas untuk menunjukkan keunggulan ekosistem dan keahlian produk kita.", author: "— Fokus Layanan Unggulan" },
                 { quote: "Disiplin kecil setiap hari, seperti pelaporan shift yang tepat waktu dan konsistensi demo produk, adalah kunci kesuksesan jangka panjang.", author: "— Produktivitas Tanpa Batas" },
                 { quote: "Kesuksesan toko kita dibangun dari kolaborasi yang solid, pemahaman produk yang tajam, dan antusiasme dalam melayani.", author: "— Kekuatan Tim Retail" },
-                { quote: "Jadilah ahli di bidang lini produk Anda, kuasai setiap detail fitur, dan jadikan setiap tantangan sebagai batu loncatan.", author: "— LOB Champion Spirit" }
+                { quote: "Jadilah ahli di bidang lini produk Anda, kuasai setiap detail fitur, dan jadikan setiap tantangan sebagai batu loncatan.", author: "— LOB Champion Spirit" },
+                { quote: "Senyum pertama yang tulus sering kali membuka pintu percakapan yang paling bermakna bagi pelanggan.", author: "— Hospitality First" },
+                { quote: "Jangan hanya menjelaskan spesifikasi; bantu pelanggan membayangkan bagaimana solusi kita mempermudah hari mereka.", author: "— Customer Centric" },
+                { quote: "Demo produk yang rapi dan siap pakai mencerminkan standar profesionalisme toko kita sebelum sepatah kata terucap.", author: "— Store Excellence" },
+                { quote: "Pertanyaan yang tepat jauh lebih berharga daripada jawaban yang terburu-buru.", author: "— Seni Probing" },
+                { quote: "Satu langkah kecil hari ini dalam mempelajari fitur baru akan membuat Anda lebih percaya diri esok hari.", author: "— Continuous Learning" },
+                { quote: "Kepercayaan pelanggan tumbuh saat kita jujur merekomendasikan yang paling sesuai dengan kebutuhannya.", author: "— Integritas Layanan" },
+                { quote: "Energi positif satu orang dapat menular dan menghidupkan suasana seluruh lantai penjualan.", author: "— Good Vibes Only" },
+                { quote: "Konsistensi mengalahkan intensitas sesaat. Lakukan yang terbaik di setiap shift.", author: "— Konsistensi Harian" },
+                { quote: "Setiap pelanggan memiliki cerita berbeda; dengarkan dengan penuh perhatian sebelum menawarkan solusi.", author: "— Active Listening" },
+                { quote: "Kerja sama antar-tim di kasir, floor, dan operasional adalah mesin penggerak utama kepuasan pelanggan.", author: "— One Team One Goal" },
+                { quote: "Keterampilan terbaik diasah di lapangan, bukan hanya dari teori semata.", author: "— Practice Makes Better" },
+                { quote: "Jadikan setiap penolakan atau pertanyaan sulit sebagai bahan bakar untuk mengasah jam terbang Anda.", author: "— Growth Mindset" },
+                { quote: "Detail kecil yang diperhatikan hari ini mencegah kendala besar di kemudian hari.", author: "— Attention to Detail" },
+                { quote: "Pelanggan mungkin lupa harga setelah beberapa waktu, tapi mereka selalu ingat bagaimana kita memperlakukannya.", author: "— Memorable Experience" },
+                { quote: "Tetap tenang, ramah, dan sigap—bahkan di jam-jam paling ramai sekalipun.", author: "— Grace Under Pressure" },
+                { quote: "Berbagi tips dan insight bersama rekan setim membuat seluruh toko tumbuh lebih kuat.", author: "— Collaborative Growth" },
+                { quote: "Ekosistem yang terhubung memudahkan hidup pelanggan; bantu mereka melihat gambaran besarnya.", author: "— Ecosystem Value" },
+                { quote: "Tanggung jawab atas pelaporan tepat waktu adalah bentuk komitmen kita pada keteraturan bersama.", author: "— Accountability" },
+                { quote: "Hari yang baru selalu membawa peluang baru untuk memecahkan rekor pribadi terbaik Anda.", author: "— Fresh Start" },
+                { quote: "Sikap proaktif menyapa lebih dulu sering kali menjadi pembeda antara sekadar lewat dan bertransaksi.", author: "— Proactive Service" },
+                { quote: "Pahami produknya, kuasai alurnya, dan sampaikan dengan bahasa yang membumi.", author: "— Clear Communication" },
+                { quote: "Kebanggaan pada pekerjaan lahir ketika kita melihat pelanggan pulang dengan rasa puas.", author: "— Pride in Craft" },
+                { quote: "Tidak ada kata terlambat untuk memperbaiki cara kita melayani di sesi berikutnya.", author: "— Always Improving" },
+                { quote: "Fokus pada hal yang bisa kita kendalikan: sikap, kesiapan produk, dan kualitas sapaan.", author: "— Stay Focused" },
+                { quote: "Terima kasih atas dedikasi dan kerja keras Anda hari ini—setiap kontribusi sangat berarti.", author: "— Apresiasi Tim" }
             ],
             en: [
                 { quote: "Great service is not just about selling products, it is about creating meaningful experiences that bring customers back with a smile.", author: "— Daily Retail Team Spirit" },
                 { quote: "Every customer interaction is a golden opportunity to showcase ecosystem excellence and product expertise.", author: "— Excellence in Service" },
                 { quote: "Small daily disciplines, like timely shift reporting and product demo consistency, are the keys to long-term success.", author: "— Limitless Productivity" },
                 { quote: "Our store success is built on solid collaboration, sharp product knowledge, and genuine enthusiasm in serving.", author: "— The Power of Retail Team" },
-                { quote: "Be an expert in your product line, master every feature detail, and turn every challenge into a stepping stone.", author: "— LOB Champion Spirit" }
+                { quote: "Be an expert in your product line, master every feature detail, and turn every challenge into a stepping stone.", author: "— LOB Champion Spirit" },
+                { quote: "A genuine first smile often opens the door to the most meaningful customer conversations.", author: "— Hospitality First" },
+                { quote: "Don't just list specs; help customers picture how our solution makes their day easier.", author: "— Customer Centric" },
+                { quote: "Clean, ready-to-use demo units reflect our store's professionalism before a single word is spoken.", author: "— Store Excellence" },
+                { quote: "The right question is far more valuable than a rushed answer.", author: "— The Art of Probing" },
+                { quote: "One small step today in learning a new feature builds stronger confidence tomorrow.", author: "— Continuous Learning" },
+                { quote: "Customer trust grows when we honestly recommend what fits their needs best.", author: "— Service Integrity" },
+                { quote: "One person's positive energy can lift the spirit of the entire sales floor.", author: "— Good Vibes Only" },
+                { quote: "Consistency beats occasional intensity. Bring your best to every shift.", author: "— Daily Consistency" },
+                { quote: "Every customer has a different story; listen attentively before offering a solution.", author: "— Active Listening" },
+                { quote: "Teamwork across floor, checkout, and ops is the true engine of customer satisfaction.", author: "— One Team One Goal" },
+                { quote: "Great skills are sharpened on the floor, not by theory alone.", author: "— Practice Makes Better" },
+                { quote: "Turn tough questions or hesitations into fuel to sharpen your experience.", author: "— Growth Mindset" },
+                { quote: "Small details cared for today prevent bigger hiccups down the road.", author: "— Attention to Detail" },
+                { quote: "Customers may forget prices over time, but they always remember how we made them feel.", author: "— Memorable Experience" },
+                { quote: "Stay calm, warm, and responsive—even during the busiest hours.", author: "— Grace Under Pressure" },
+                { quote: "Sharing tips and insights with teammates helps the whole store grow stronger.", author: "— Collaborative Growth" },
+                { quote: "A connected ecosystem simplifies daily life; help customers see the bigger picture.", author: "— Ecosystem Value" },
+                { quote: "Timely reporting is our shared commitment to smooth store operations.", author: "— Accountability" },
+                { quote: "Every new day brings a fresh chance to beat your personal best.", author: "— Fresh Start" },
+                { quote: "Proactively greeting first often turns a passing glance into a great conversation.", author: "— Proactive Service" },
+                { quote: "Know the product, master the flow, and explain it in clear, everyday language.", author: "— Clear Communication" },
+                { quote: "True pride in work comes when customers leave genuinely satisfied.", author: "— Pride in Craft" },
+                { quote: "It is never too late to elevate how we serve in the next interaction.", author: "— Always Improving" },
+                { quote: "Focus on what you control: your attitude, demo readiness, and warmth.", author: "— Stay Focused" },
+                { quote: "Thank you for your dedication and hard work today—every effort counts.", author: "— Team Appreciation" }
             ]
         };
 
@@ -472,7 +532,8 @@
                 nav_open_studio: "Open Studio",
                 nav_ems: "Ecosystem Mastery",
                 nav_lob: "LOB Champion",
-                nav_demounit: "Demo Unit",
+                nav_demounit: "Demo Unit Audit",
+                badge_friday: "Jumat",
                 nav_coach: "Sales Coach Task",
                 nav_streamz: "Akun StreamzAI",
                 nav_ops_hub: "Aktivitas OPS EMS PNR",
@@ -508,11 +569,13 @@
                 lob_desc: "Akses portal LOB Champion untuk memantau pencapaian, rekapitulasi penjualan lini produk, serta pelaporan shift secara berkala.",
                 btn_submit_lob: "Buka Portal LOB Champion",
 
-                // Demo Unit
-                card_demounit_title: "Demo Unit Portal",
-                card_demounit_sub: "Demo Device Management & Status",
-                demounit_desc: "Gunakan portal Demo Unit untuk memantau status perangkat demo, ketersediaan unit, serta pelaporan pemeliharaan perangkat display toko.",
-                btn_submit_demounit: "Buka Portal Demo Unit",
+                // Demo Unit Weekly Audit
+                card_demounit_title: "Demo Unit Weekly Audit",
+                card_demounit_sub: "Weekly Display Status & Readiness Check (Every Friday)",
+                demounit_schedule_badge: "🗓️ Setiap Jumat",
+                demounit_desc: "Pengecekan dan pelaporan rutin yang wajib dilakukan setiap hari Jumat untuk memantau kondisi fisik, kelengkapan aksesoris, software demo, serta kesiapan operasional seluruh perangkat demo di toko.",
+                demounit_note: "Jadwal Submit: Wajib dilaporkan setiap hari Jumat sebelum tutup operasional toko.",
+                btn_submit_demounit: "Submit Status Demo Unit (Jumat)",
 
                 // Sales Coach Task & Rules & Delete
                 card_coach_title: "Sales Coach Monthly Task & Alur Pembuatan Akun",
@@ -561,7 +624,8 @@
                 nav_open_studio: "Open Studio",
                 nav_ems: "Ecosystem Mastery",
                 nav_lob: "LOB Champion",
-                nav_demounit: "Demo Unit",
+                nav_demounit: "Demo Unit Audit",
+                badge_friday: "Friday",
                 nav_coach: "Sales Coach Task",
                 nav_streamz: "StreamzAI Account",
                 nav_ops_hub: "EMS PNR OPS Activity",
@@ -597,11 +661,13 @@
                 lob_desc: "Access the LOB Champion portal to monitor achievements, product line sales recap, and periodic shift reports.",
                 btn_submit_lob: "Open LOB Champion Portal",
 
-                // Demo Unit
-                card_demounit_title: "Demo Unit Portal",
-                card_demounit_sub: "Demo Device Management & Status",
-                demounit_desc: "Use the Demo Unit portal to monitor demo device status, unit availability, and store display maintenance reporting.",
-                btn_submit_demounit: "Open Demo Unit Portal",
+                // Demo Unit Weekly Audit
+                card_demounit_title: "Demo Unit Weekly Audit",
+                card_demounit_sub: "Weekly Display Status & Readiness Check (Every Friday)",
+                demounit_schedule_badge: "🗓️ Every Friday",
+                demounit_desc: "Routine inspection and reporting required every Friday to monitor physical condition, accessory completeness, demo software, and operational readiness of all display devices in the store.",
+                demounit_note: "Submission Schedule: Must be reported every Friday before store closing.",
+                btn_submit_demounit: "Submit Demo Unit Status (Friday)",
 
                 // Sales Coach Task & Rules & Delete
                 card_coach_title: "Sales Coach Monthly Task & Account Workflow",
